@@ -1,0 +1,8 @@
+html {
+    box-sizing: border-box;
+    /* no user select for ui purposes */
+    user-select: none;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
