@@ -13,8 +13,8 @@
     "url": "git+https://github.com/kubakorniluk/portfolio.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Kuba Korniluk <hello@kubakorniluk.pl> (https://kubakorniluk.pl)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kubakorniluk/portfolio/issues"
   },

@@ -8,10 +8,14 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.js', '.jsx', 'scss']
     },
+    devServer: {
+        historyApiFallback: true
+     },
     module: {
         // loaders
         rules: [
@@ -45,8 +49,8 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     'file-loader',
-                ],
-            },
+                ]
+            }
         ]
     },
     plugins: [
