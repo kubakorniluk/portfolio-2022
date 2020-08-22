@@ -1,0 +1,23 @@
+@import '../../../utils/_variables.scss';
+.navbar__logo {
+    display: inline-block;
+    margin: 0;
+    color: $white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: normal;
+    font-size: $font-default-size;
+}
+.navbar__logo::after {
+    content: '';
+    display: block;   
+    margin-top: 0.75em;
+    width: 25%;
+    height: 1px;
+    background-color: $white;
+    transition: 0.75s ease;
+    cursor: pointer;
+    
+}
+.navbar__logo:hover::after {
+    width: 100%;
+}
