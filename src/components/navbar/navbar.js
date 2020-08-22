@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './logo/logo.js'
+import Logo from './components/logo/logo.js'
 const Navbar = () => {
     return (  
         <header className='navbar'>
