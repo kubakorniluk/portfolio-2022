@@ -1,22 +1,23 @@
 @import '../../../../utils/_variables.scss';
 .header__logo {
-    display: inline-block;
     margin: 0;
+    padding: 0;
+    float: left;
+    margin: 4vw;
     color: $white;
     font-family: 'Quicksand', sans-serif;
     font-weight: normal;
     font-size: $font-default-size;
+    cursor: pointer;
 }
 .header__logo::after {
     content: '';
     display: block;   
     margin-top: 0.75em;
     width: 25%;
-    height: 1px;
+    height: 0.05em;
     background-color: $white;
     transition: 0.75s ease;
-    cursor: pointer;
-    
 }
 .header__logo:hover::after {
     width: 100%;
