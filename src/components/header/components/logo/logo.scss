@@ -2,8 +2,8 @@
 .header__logo {
     margin: 0;
     padding: 0;
-    float: left;
-    margin: 4vw;
+    margin: 3vw;
+    padding: 1vw;
     color: $white;
     font-family: 'Quicksand', sans-serif;
     font-weight: normal;
@@ -13,7 +13,7 @@
 .header__logo::after {
     content: '';
     display: block;   
-    margin-top: 0.75em;
+    margin-top: 0.4em;
     width: 25%;
     height: 0.05em;
     background-color: $white;

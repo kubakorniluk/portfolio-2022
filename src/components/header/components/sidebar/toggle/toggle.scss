@@ -1,17 +1,31 @@
 @import '../../../../../utils/_variables.scss';
+$bar-width: 1.4em;
+$bar-height: 0.13em;
 .sidebar__toggle {
+    display: block;
     margin: 0;
     padding: 0;
+    padding: 1vw;
     cursor: pointer;
+    z-index: 999;
+    .sidebar__toggle--bar {
+        display: block;   
+        margin: 0;
+        padding: 0;
+        margin: 0.3em 0em;
+        width: $bar-width;
+        height: $bar-height;
+        background-color: $white;
+        transition: 0.3s;
+    
+    }
+    .sidebar__toggle--bar:last-of-type {
+        width: calc(#{$bar-width} - 25%);
+        margin-left: auto;
+    }
 }
-.sidebar__toggle--bar {
-    display: block;   
-    margin: 0;
-    margin: 0.4em 0 0.4em 0;
-    width: 1.75em;
-    height: 0.12em;
-    background-color: $white;
-}
-.sidebar__toggle--bar:last-of-type {
-    width: 1.25em;
-}
+.sidebar__toggle:hover {
+    .sidebar__toggle--bar:last-of-type {
+        width: $bar-width;
+    }
+} 
