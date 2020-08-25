@@ -1,10 +1,11 @@
 import React from 'react';
-import './header.scss'
-import Logo from './components/logo/logo.jsx'
-import Sidebar from './components/sidebar/sidebar.jsx';
-const Header = () => {
+import Logo from './components/logo/logo';
+import Sidebar from './components/sidebar/sidebar';
+import './header.scss';
+
+function Header() {
     return ( 
-        <header className='header'>
+        <header className="header">
             <Logo />
             <Sidebar />
         </header>

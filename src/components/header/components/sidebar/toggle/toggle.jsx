@@ -1,6 +1,7 @@
 import React from 'react';
 import './toggle.scss';
-class ToggleSidebar extends React.Component {
+
+class Toggle extends React.Component {
     constructor() {
         super();
         this.handleClick = this.handleClick.bind(this);
@@ -19,12 +20,12 @@ class ToggleSidebar extends React.Component {
                 onClick={this.handleClick} 
                 className={this.state.clicked ? 'sidebar__toggle sidebar__toggle--active' : 'sidebar__toggle'}
             >
-                <span className='sidebar__toggle--bar'></span>
-                <span className='sidebar__toggle--bar'></span>
-                <span className='sidebar__toggle--bar'></span>
+                <span className="sidebar__toggle--bar"></span>
+                <span className="sidebar__toggle--bar"></span>
+                <span className="sidebar__toggle--bar"></span>
             </i>
         );
     }
 }
  
-export default ToggleSidebar;
+export default Toggle;

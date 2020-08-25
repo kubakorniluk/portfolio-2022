@@ -12,7 +12,7 @@ $bar-height: 0.13em;
         display: block;   
         margin: 0;
         padding: 0;
-        margin: 0.3em 0em;
+        margin: 0.25em 0em;
         width: $bar-width;
         height: $bar-height;
         background-color: $white;
@@ -31,10 +31,10 @@ $bar-height: 0.13em;
 } 
 .sidebar__toggle--active {
     .sidebar__toggle--bar:first-of-type {
-        transform: translateY(0.24em) rotate(45deg);
+        transform: translateY(0.2em) rotate(45deg);
     }
     .sidebar__toggle--bar:nth-of-type(2) {
-        transform: translateY(-0.24em) rotate(-45deg);
+        transform: translateY(-0.2em) rotate(-45deg);
     }
     .sidebar__toggle--bar:last-of-type {
         transform: scale(0);

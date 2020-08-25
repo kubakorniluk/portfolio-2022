@@ -1,10 +1,11 @@
 import React from 'react';
+import Toggle from './toggle/toggle';
 import './sidebar.scss';
-import ToggleSidebar from './toggle/toggle.jsx';
-const Sidebar = () => {
+
+function Sidebar() {
     return (  
-        <nav className='sidebar'>
-            <ToggleSidebar />
+        <nav className="sidebar">
+            <Toggle />
         </nav>
     );
 }

@@ -1,8 +1,9 @@
 import React from 'react';
+import Header from '../../components/header/header';
+import Footer from '../../components/footer/footer';
 import './index.scss';
-import Header from '../../components/header/header.jsx'
-import Footer from '../../components/footer/footer.jsx'
-const Homepage = () => {
+
+function Homepage() {
     return (
         <React.Fragment>
             <Header />
