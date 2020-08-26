@@ -4,7 +4,9 @@ import './logo.scss';
 
 function Logo() {
     return (
-        <h1 className="header__logo"><Link to="/">Kuba Korniluk</Link></h1>
+        <h1 className="header__logo">
+            <Link to="/">Kuba Korniluk</Link>
+        </h1>
     );
 }
  
