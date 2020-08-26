@@ -1,7 +1,5 @@
 @import '../../../../utils/_variables.scss';
 .header__logo {
-    margin: 0;
-    padding: 0;
     margin: 3vw;
     padding: 1vw;
     color: $white;
@@ -9,6 +7,9 @@
     font-weight: normal;
     font-size: $font-default-size;
     cursor: pointer;
+    a {
+        color: $white;
+    }
 }
 .header__logo::after {
     content: '';

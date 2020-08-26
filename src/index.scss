@@ -4,12 +4,11 @@ html {
     /* no user select for ui purposes */
     user-select: none;
 }
-*, *:before, *:after {
+*, 
+*:before, 
+*:after {
     box-sizing: inherit;
 }
 a:link {
     text-decoration: none;
-}
-a:link, a:active, a:visited {
-    color: $white;
 }

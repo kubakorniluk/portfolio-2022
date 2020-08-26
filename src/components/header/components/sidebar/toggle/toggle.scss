@@ -2,16 +2,13 @@
 $bar-width: 1.4em;
 $bar-height: 0.13em;
 .sidebar__toggle {
+    position: relative;
     display: block;
-    margin: 0;
-    padding: 0;
     padding: 1vw;
     cursor: pointer;
     z-index: 999;
     .sidebar__toggle--bar {
         display: block;   
-        margin: 0;
-        padding: 0;
         margin: 0.25em 0em;
         width: $bar-width;
         height: $bar-height;
