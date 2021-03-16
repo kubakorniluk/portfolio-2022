@@ -1,63 +1,54 @@
 const path = require('path');
-const autoprefixer = require('autoprefixer');
 // plugins
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: './src/index.jsx',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'index.js',
-        publicPath: '/'
+        filename: '[name].[contenthash].js',
+        publicPath: '/',
     },
     resolve: {
-        extensions: ['.js', '.jsx', 'scss']
-    },
-    devServer: {
-        historyApiFallback: true
-     },
-    module: {
-        // loaders
-        rules: [
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                use: [
-                    "babel-loader"
-                ]
-            },
-            {
-                test: /\.s[ac]ss$/i,
-                exclude: /node_modules/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader',
-                    { 
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: () => [
-                                autoprefixer({})
-                            ]
-                        }
-                     }
-                ]                
-            },
-            {
-                test: /\.(png|svg|jpg|gif)$/,
-                exclude: /node_modules/,
-                use: [
-                    'file-loader',
-                ]
-            }
+        extensions: ['.jsx', '.js'],
+        roots: [
+            path.resolve('./src')
         ]
     },
+    devtool: 'eval',
+    devServer: {
+        historyApiFallback: true
+    },
     plugins: [
+        new CleanWebpackPlugin(),
+        new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({
             template: __dirname + '/src/index.html',
             filename: 'index.html',
             inject: 'body'
         })
-    ]
+        
+    ],
+    module: {
+        // loaders
+        rules: [
+            {
+                test: /\.jsx?$/,
+                include: path.resolve(__dirname, 'src'),
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.(png|svg|jpe?g|gif)$/,
+                include: path.resolve(__dirname, 'src/assets'),
+                loader:'file-loader',
+                options: {
+                    outputPath: 'assets/img',
+                    name: '[name].[ext]',
+                    esModule: false
+                }
+            }
+        ]
+    }
 }

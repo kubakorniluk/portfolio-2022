@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Homepage from '../../routes/homepage/index.jsx';
-import './app.scss';
+import Homepage from '../routes/Homepage';
 
-function App() {
+const App = () => {
     return (
         <BrowserRouter>
             <Switch>
