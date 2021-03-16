@@ -1,8 +1,13 @@
 import React from 'react';
+import HomepageStyles from '../styles/homepageStyles';
+import Header from '../components/Header';
 
 const Homepage = () => {
     return (
-        null
+        <>
+            <HomepageStyles />
+            <Header />
+        </>
     );
 }
  
