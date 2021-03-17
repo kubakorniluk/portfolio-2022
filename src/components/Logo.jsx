@@ -14,7 +14,7 @@ const StyledLogo = styled.h1`
         display: block;   
         margin-top: 0.75em;
         width: 25%;
-        height: 2px;
+        height: 0.1em;
         background-color: #ffffff;
         transition: 0.75s ease;
         cursor: pointer;
@@ -23,15 +23,24 @@ const StyledLogo = styled.h1`
     &:hover::after {
         width: 100%;
     } 
+    a {
+        color: #ffffff;
+    }
+    @media only screen and (min-width: 0px) and (max-width: 576.99px) {
+        font-size: 90%;
+    }
+    @media only screen and (min-width: 769px) and(max-width: 1024.99px) { 
+        font-size: 120%;
+    }
 `;
 
 const Logo = () => {
     return (
-        <Link to="/">
-            <StyledLogo>
+        <StyledLogo>
+            <Link to="/">
                 Kuba Korniluk
-            </StyledLogo>
-        </Link>
+            </Link>
+        </StyledLogo>
     );
 }
  
