@@ -29,7 +29,7 @@ const StyledFooter = styled.footer`
 const Footer = () => {
     return ( 
         <StyledFooter>
-            <Button text="Współpraca"/>
+            <Button />
         </StyledFooter>
     );
 }
