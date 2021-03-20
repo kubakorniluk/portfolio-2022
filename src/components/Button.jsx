@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
@@ -9,9 +9,10 @@ const StyledButton = styled.button`
     border: 0;
     color: #ffffff;
     font-family: 'Inconsolata', monospace;
-    padding: 1.25em 2em;
+    font-weight: 500;
     font-size: 90%;
-    cursor: pointer;
+    padding: 1.25em 2em;
+    transition: .1s;
     span {
         position: absolute;
         display: block;
@@ -44,6 +45,8 @@ const StyledButton = styled.button`
         right: 0;
     }
     &:hover {
+        background-color: #ffffff;
+        color: #070707;
         .top-left {
             top: -.5em;
             left: -.5em;
@@ -62,22 +65,18 @@ const StyledButton = styled.button`
         }
     }
     @media only screen and (min-width: 0px) and (max-width: 320.99px) {
-        padding: 1em 2em;
         font-size: 75%;
     }
     @media only screen and (min-width: 321px) and (max-width: 576.99px) {
-        padding: 1.25em 2.25em;
         font-size: 80%;
     }
     @media only screen and (min-width: 577px) and (max-width: 768.99px) {
         font-size: 100%;
     }
     @media only screen and (min-width: 769px) and (max-width: 1024.99px) { 
-        padding: 1.25em 2.25em;
         font-size: 105%;
     }
     @media only screen and (min-width: 1025px) and (max-width: 1366.99px) { 
-        padding: 1.25em 2.25em;
         font-size: 85%;
     }
 `;
@@ -87,7 +86,7 @@ const Button = () => {
             <StyledButton>
                 <span className="top-left"></span>
                 <span className="top-right"></span>
-                Współpraca
+                Skontaktuj się
                 <span className="bottom-left"></span>
                 <span className="bottom-right"></span>
             </StyledButton>
