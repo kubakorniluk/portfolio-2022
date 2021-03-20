@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     }
     *, *:before, *:after {
         box-sizing: inherit;
+        cursor: none;
     }
     body {
         margin: 0;
