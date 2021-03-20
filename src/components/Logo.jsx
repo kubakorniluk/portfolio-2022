@@ -10,7 +10,6 @@ const StyledLogo = styled.h1`
     font-weight: normal;
     font-size: 105%;
     padding: 1em;
-    cursor: pointer;
     &::after {
         content: '';
         display: block;   
