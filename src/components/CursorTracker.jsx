@@ -7,7 +7,7 @@ const StyledXTracker = styled.span`
     top: 0;
     width: 100vw;
     height: 1px;
-    background-color: rgba(26, 30, 40, .35); 
+    background-color: rgba(26, 30, 40, .5); 
     pointer-events: none;
 `;
 const StyledYTracker = styled.span`
@@ -16,7 +16,7 @@ const StyledYTracker = styled.span`
     left: 0;
     width: 1px;
     height: 100vh;
-    background-color: rgba(26, 30, 40, .35); 
+    background-color: rgba(26, 30, 40, .5); 
     pointer-events: none;
 `;
 const StyledCursor = styled.span`
@@ -24,7 +24,7 @@ const StyledCursor = styled.span`
     position: absolute;
     width: 1.5em;
     height: 1.5em;
-    border: 1.5px solid rgba(88, 76, 234, 0.7);
+    border: 1.5px solid rgba(88, 76, 234, 0.75);
     transform: translate(-55%, -55%);
     background-color: transparent;
     pointer-events: none;
@@ -36,7 +36,7 @@ const CursorTracker = () => {
     useEffect(() => {
         window.addEventListener('mousemove', handleTracker);
         return () => {
-            document.removeEventListener("mousemove", handleTracker);
+            window.removeEventListener('mousemove', handleTracker);
           };
     })
     const handleTracker = (event) => {
