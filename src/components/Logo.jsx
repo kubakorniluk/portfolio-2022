@@ -34,6 +34,9 @@ const StyledLogo = styled.h1`
     @media only screen and (min-width: 769px) and (max-width: 1024.99px) { 
         font-size: 110%;
     }
+    @media only screen and (min-width: 1025px) and (max-width: 1366.99px) { 
+        font-size: 100%;
+    }
 `;
 
 const Logo = () => {
