@@ -9,7 +9,7 @@ const StyledButton = styled.button`
     border: 0;
     color: #ffffff;
     font-family: 'Inconsolata', monospace;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 90%;
     padding: 1.25em 2em;
     transition: .1s;
