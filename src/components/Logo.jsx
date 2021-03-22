@@ -8,7 +8,7 @@ const StyledLogo = styled.h1`
     color: #ffffff;
     font-family: 'Quicksand', sans-serif;
     font-weight: normal;
-    font-size: 105%;
+    font-size: 100%;
     padding: 1em;
     &::after {
         content: '';
@@ -23,13 +23,13 @@ const StyledLogo = styled.h1`
         width: 100%;
     } 
     @media only screen and (min-width: 0px) and (max-width: 320.99px) {
-        font-size: 90%;
+        font-size: 80%;
     }
     @media only screen and (min-width: 321px) and (max-width: 576.99px) {
-        font-size: 97.5%;
+        font-size: 90%;
     }
     @media only screen and (min-width: 577px) and (max-width: 768.99px) {
-        font-size: 105%;
+        font-size: 100%;
     }
     @media only screen and (min-width: 769px) and (max-width: 1024.99px) { 
         font-size: 110%;
