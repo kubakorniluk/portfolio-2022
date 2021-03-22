@@ -10,8 +10,8 @@ const StyledButton = styled.button`
     color: #ffffff;
     font-family: 'Inconsolata', monospace;
     font-weight: 400;
-    font-size: 90%;
-    padding: 1.25em 2em;
+    font-size: 85%;
+    padding: 1.25em 1.5em;
     transition: .1s;
     span {
         position: absolute;
@@ -65,16 +65,16 @@ const StyledButton = styled.button`
         }
     }
     @media only screen and (min-width: 0px) and (max-width: 320.99px) {
-        font-size: 75%;
+        font-size: 70%;
     }
     @media only screen and (min-width: 321px) and (max-width: 576.99px) {
-        font-size: 80%;
+        font-size: 75%;
     }
     @media only screen and (min-width: 577px) and (max-width: 768.99px) {
-        font-size: 100%;
+        font-size: 90%;
     }
     @media only screen and (min-width: 769px) and (max-width: 1024.99px) { 
-        font-size: 105%;
+        font-size: 90%;
     }
     @media only screen and (min-width: 1025px) and (max-width: 1366.99px) { 
         font-size: 85%;
