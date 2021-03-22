@@ -1,56 +1,82 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const StyledXTracker = styled.span`
-    z-index: 998;
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 1px;
-    background-color: rgba(26, 30, 40, .5); 
-    pointer-events: none;
-`;
-const StyledYTracker = styled.span`
-    z-index: 998;
-    position: absolute;
-    left: 0;
-    width: 1px;
-    height: 100vh;
-    background-color: rgba(26, 30, 40, .5); 
-    pointer-events: none;
-`;
 const StyledCursor = styled.span`
     z-index: 999;
     position: absolute;
-    width: 1.5em;
-    height: 1.5em;
-    border: 1.5px solid rgba(88, 76, 234, 0.75);
-    transform: translate(-55%, -55%);
-    background-color: transparent;
+    width: .5em;
+    height: .5em;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #584cea;
     pointer-events: none;
 `;
-
-const CursorTracker = () => {
-    const [ clientX, setClientX ] = useState(0);
-    const [ clientY, setClientY] = useState(0);
-    useEffect(() => {
-        window.addEventListener('mousemove', handleTracker);
-        return () => {
-            window.removeEventListener('mousemove', handleTracker);
-          };
-    })
-    const handleTracker = (event) => {
-        const { clientY, clientX } = event;
-        setClientX(clientX);
-        setClientY(clientY);
+const StyledCursorTracker = styled.span`
+    z-index: 999;
+    position: absolute;
+    width: 1.75em;
+    height: 1.75em;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    pointer-events: none;
+    transition: .1s;
+    span {
+        position: absolute;
+        display: block;
+        width: .5em;
+        height: .5em;
+        transition: .1s;
     }
+    .top-left {
+        border-top: .1em solid #584cea;
+        border-left: .1em solid #584cea;
+        top: 0;
+        left: 0;
+    }
+    .top-right {
+        border-top: .1em solid #584cea;
+        border-right: .1em solid #584cea;
+        top: 0;
+        right: 0;
+    }
+    .bottom-left {
+        border-bottom: .1em solid #584cea;
+        border-left: .1em solid #584cea;
+        bottom: 0;
+        left: 0;
+    }
+    .bottom-right {
+        border-bottom: .1em solid #584cea;
+        border-right: .1em solid #584cea;
+        bottom: 0;
+        right: 0;
+    }
+`;
+
+const Cursor = () => {
+    const [ cursorPosition, setCursorPosition ] = useState({x: 0, y: 0});
+    useEffect(() => {
+        window.addEventListener('mousemove', handleCursorPosition);
+        return () => {
+            window.removeEventListener('mousemove', handleCursorPosition);
+        };
+    })
+    const handleCursorPosition = (event) => {
+        const { clientY, clientX } = event;
+        setCursorPosition({x: clientX, y: clientY})
+    }
+    const { x, y } = cursorPosition;
     return ( 
         <>
-            <StyledXTracker style={{top: `calc(${clientY}px - .1em)`}}/>
-            <StyledCursor style={{top:`calc(${clientY}px)`, left: `calc(${clientX}px)`}}/>
-            <StyledYTracker style={{left: `calc(${clientX}px - .1em)`}} />
+            <StyledCursor style={{top: y, left: x}} />
+            <StyledCursorTracker style={{top: y, left: x}}>
+                    <span className="top-left"></span>
+                    <span className="top-right"></span>
+                    <span className="bottom-left"></span>
+                    <span className="bottom-right"></span>
+            </StyledCursorTracker>
         </>
     );
 }
  
-export default CursorTracker;
+export default Cursor;
