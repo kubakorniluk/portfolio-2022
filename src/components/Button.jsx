@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const StyledButton = styled.button`
     position: relative;
     display: block;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.075);
     border: 0;
     color: #ffffff;
     font-family: 'Inconsolata', monospace;
