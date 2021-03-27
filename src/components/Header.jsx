@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
-import SidebarToggle from './SidebarToggle';
+import Sidebar from './Sidebar';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -31,7 +31,7 @@ const Header = () => {
     return ( 
         <StyledHeader>
             <Logo />
-            <SidebarToggle />
+            <Sidebar />
         </StyledHeader>
     );
 }
