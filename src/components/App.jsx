@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import GlobalStyles from '../styles/globalStyles';
-import Homepage from '../routes/Homepage';
 
 const App = () => {
+    const Homepage = lazy(() => import('../routes/Homepage'));
     return (
         <>
             <GlobalStyles />
             <BrowserRouter>
-                <Switch>
-                    <Route exact path="/">
-                        <Homepage />
-                    </Route>
-                </Switch>
+                <Suspense fallback="Loading...">
+                    <Switch>
+                        <Route exact path="/" component={Homepage}/>
+                    </Switch>   
+                </Suspense>
             </BrowserRouter>
         </>
     );
