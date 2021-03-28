@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
-import AppContext from './AppContext';
+import { ProjectContext } from './ProjectContextProvider';
 
 const slideIn = keyframes`
     from {
@@ -28,9 +28,9 @@ const slideOut = keyframes`
 `;
 const StyledProjectBrowser = styled.section`
     position: relative;
-    display: block;
+    display: flex;
     width: 50vw;
-    height: 50vh;
+    height: 100%;
     span {
         position: absolute;
         z-index: 999;
@@ -101,57 +101,42 @@ const ProjectTitle = styled.figcaption`
     left: 0;
     transform: translate(-0%, -50%);
     margin: 0;
-    font-size: 600%;
+    font-size: 400%;
     font-weight: 900;
     font-family: 'Times New Roman', Times, serif;
     color: #584cea;
     margin-left: -10%;
-    margin-right: 50%;
+    margin-right: 90%;
 `;
 
 const ProjectBrowser = () => {
-    const [ projectsData, setProjectsData ] = useState([]);
-    const [ currentProject, setCurrentProject ] = useState(0);
-    useEffect(() => {
-        import('../data/projects.json')
-        .then(data => 
-            setProjectsData(data.default)
-        );
-    });
+    const { 
+        handleMouseWheel, 
+        projectsData, 
+        currentProject 
+    } = useContext(ProjectContext);
     useEffect(() => {
         setTimeout(
             () => {
-                window.addEventListener('wheel', handleMouseWheel, {passive: true});
-            }, 1000
+                window.addEventListener('wheel', handleMouseWheel, { passive: true });
+            }, 2000
         );
         return () => {
             setTimeout(
                 () => {
-                    window.removeEventListener('wheel', handleMouseWheel, {passive: true});
-                }, 1000
+                    window.removeEventListener('wheel', handleMouseWheel, { passive: true });
+                }, 2000
             );
         }
-    })
-    const handleMouseWheel = (event) => {
-        if(event.deltaY < 0) { 
-            (currentProject + 1 > projectsData.length - 1) ? 
-            setCurrentProject(0) : 
-            setCurrentProject(currentProject + 1)
-        }
-        else if (event.deltaY > 0) { 
-            (currentProject - 1 < 0) ? 
-            setCurrentProject(projectsData.length - 1) : 
-            setCurrentProject(currentProject - 1)
-        }
-    }
+    });
     const projects = projectsData.map(item => {
         const { 
-            id, 
-            img, 
-            title, 
-            client, 
-            website, 
-            sourceCode 
+            id,
+            img,
+            title,
+            client,
+            website,
+            sourceCode
         } = item;
         return (
             <ProjectImage key={id} img={require(`../${img}`)}>
@@ -160,15 +145,11 @@ const ProjectBrowser = () => {
                 <ProjectTitle>{title}</ProjectTitle>
             </ProjectImage>
         )
-    })
+    });
     return ( 
-        <AppContext.Consumer>
-            {context => (
-                <StyledProjectBrowser>
-                    { projects[currentProject] }
-                </StyledProjectBrowser>
-            )}
-        </AppContext.Consumer>
+        <StyledProjectBrowser>
+            { projects[currentProject] }
+        </StyledProjectBrowser>
     );
 }
  
