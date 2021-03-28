@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
+import ProjectCounter from './ProjectCounter';
 
 const StyledFooter = styled.footer`
     display: flex;
@@ -30,6 +31,7 @@ const Footer = () => {
     return ( 
         <StyledFooter>
             <Button />
+            <ProjectCounter />
         </StyledFooter>
     );
 }
