@@ -8,6 +8,7 @@ const StyledMain = styled.main`
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 100%;
     padding: 0 6em;
     @media only screen and (min-width: 0px) and (max-width: 320.99px) {
         padding: 0 2em;
