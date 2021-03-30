@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useMemo } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Header from '../components/Header';
 import Main from '../components/Main';
@@ -44,12 +44,13 @@ const Homepage = () => {
 
     const { projectsData, currentProject } = useContext(ProjectContext);
     const currentImage = projectsData.map(i => i.img)[currentProject];
+    const memoizedCurrentImage = useMemo(() => currentImage, [currentImage])
     return (
         <>      
             { (screenWidth > 1024) ? <Cursor /> : null }
             <HomepageStyles img={
-                (currentImage !== undefined) ? 
-                require(`../${currentImage}`) : 
+                (memoizedCurrentImage !== undefined) ? 
+                require(`../${memoizedCurrentImage}`) : 
                 null
             }/>
             <Header />
