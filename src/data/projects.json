@@ -2,17 +2,17 @@
     {
         "id": 1,
         "img": "assets/img/mobile-sat.jpeg",
-        "title": "Easy online shop",
+        "title": "easy_online_shop",
         "client": "Mobile Sat",
-        "website": "#",
+        "website": "https://easyonlineshop.pl/",
         "sourceCode": "https://github.com/kubakorniluk/clients_mobile-sat"
     },
     {
         "id": 2,
         "img": "assets/img/rewal-bud.jpeg",
-        "title": "Rewal Bud",
+        "title": "rewal_bud",
         "client": "Rewal-Bud",
-        "website": "https://rewalbud.pl/",
+        "website": "http://rewalbud.pl/",
         "sourceCode": "https://github.com/kubakorniluk/clients_rewal-bud"
     }
 ]
