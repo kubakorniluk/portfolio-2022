@@ -34,7 +34,7 @@ const Counter = styled.small`
 const Separator = styled.span`
     display: block;
     width: 3em;
-    height: .1em;
+    height: .125em;
     background-color: #584cea;
     margin: 0 1em;
     @media only screen and (min-width: 0px) and (max-width: 320.99px) {
