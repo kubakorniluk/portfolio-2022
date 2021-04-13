@@ -12,10 +12,7 @@ module.exports = {
         publicPath: '/',
     },
     resolve: {
-        extensions: ['.jsx', '.js'],
-        roots: [
-            path.resolve('./src')
-        ]
+        extensions: ['.jsx', '.js']
     },
     devtool: 'eval',
     devServer: {
