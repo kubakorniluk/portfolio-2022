@@ -1,10 +1,21 @@
-import React, { useState, useEffect, useContext, useMemo } from 'react';
+import React, {
+    useState,
+    useEffect, 
+    useContext, 
+    useMemo, 
+    lazy, 
+    Suspense 
+} from 'react';
 import { createGlobalStyle } from 'styled-components';
-import Header from '../components/Header';
-import Main from '../components/Main';
-import Footer from '../components/Footer';
-import Cursor from '../components/Cursor';
 import { ProjectContext } from '../components/ProjectContextProvider';
+import Header from '../components/Header';
+import Logo from '../components/Logo';
+import Main from '../components/Main';
+import ProjectBrowser from '../components/ProjectBrowser';
+import Footer from '../components/Footer';
+import Email from '../components/Email';
+import Button from '../components/Button';
+import ProjectCounter from '../components/ProjectCounter';
 
 const HomepageStyles = createGlobalStyle`
     body {
@@ -18,21 +29,24 @@ const HomepageStyles = createGlobalStyle`
         overflow: hidden;
         transition: 1.05s;
     }
-    a {
-        color: #ffffff;
-    }
     #root {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, .825);
-        backdrop-filter: blur(5px) grayscale(1);
+        background-color: rgba(0, 0, 0, .85);
+        backdrop-filter: blur(10px) grayscale(1);
     }
 `;
 
 const Homepage = () => {
+    const { projectsData, currentProject } = useContext(ProjectContext);
+    const currentImage = projectsData.map(i => i.img)[currentProject];
+    const memoizedCurrentImage = useMemo(() => currentImage, [currentImage])
+
+    const Sidebar = lazy(() => import('../components/Sidebar'));
+
     const [ screenWidth, setScreenWidth ] = useState(window.innerWidth);
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -41,21 +55,26 @@ const Homepage = () => {
         };
     })
     const handleResize = () => setScreenWidth(window.innerWidth);
-
-    const { projectsData, currentProject } = useContext(ProjectContext);
-    const currentImage = projectsData.map(i => i.img)[currentProject];
-    const memoizedCurrentImage = useMemo(() => currentImage, [currentImage])
     return (
         <>      
-            { (screenWidth > 1024) ? <Cursor /> : null }
             <HomepageStyles img={
                 (memoizedCurrentImage !== undefined) ? 
-                require(`../${memoizedCurrentImage}`) : 
+                require(`../assets/img/${memoizedCurrentImage}`) : 
                 null
             }/>
-            <Header />
-            <Main />
-            <Footer />
+            <Header>
+                <Logo />
+                <Suspense fallback={null}>
+                    <Sidebar />
+                </Suspense>
+            </Header>
+            <Main>
+                <ProjectBrowser />
+            </Main>
+            <Footer oneElement>
+                { screenWidth  >= 768 ? <Email><Button type="button" value="Skontaktuj się"/></Email> : null }
+                <ProjectCounter />
+            </Footer>
         </>
     );
 }
