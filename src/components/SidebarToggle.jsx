@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledSidebarToggle = styled.a`
     display: flex;
@@ -13,7 +14,7 @@ const StyledToggleBar = styled.span`
     display: block;
     width: 1.5em;
     height: .14em;
-    background-color: #ffffff;
+    background-color: ${props => props.color ? '#070707' : '#ffffff'};
     margin-left: auto; 
     transition: .5s;
     transform-origin: left center;
@@ -28,12 +29,17 @@ const SidebarToggle = ({
     const [ toggle, setToggle ] = useState(false);
     const handleToggle = () => { setToggle(!toggle); handleSidebar(); }
     return (
-        <StyledSidebarToggle style={isOpen ? {color: '#070707'} : {color: '#ffffff'}} onClick={handleToggle}>
-            <StyledToggleBar style={toggle ? {transform: 'translateY(-.08em) rotate(45deg)'} : null} />
-            <StyledToggleBar style={toggle ? {transform: 'scale(0)'} : null} />
-            <StyledToggleBar style={toggle ? {transform: 'translateY(.08em) rotate(-45deg)'} : null} />
+        <StyledSidebarToggle onClick={handleToggle}>
+            <StyledToggleBar color={isOpen} style={toggle ? {transform: 'translateY(-.08em) rotate(45deg)'} : null} />
+            <StyledToggleBar color={isOpen} style={toggle ? {transform: 'scale(0)'} : null} />
+            <StyledToggleBar color={isOpen} style={toggle ? {transform: 'translateY(.08em) rotate(-45deg)'} : null} />
         </StyledSidebarToggle>
     );
 }
  
 export default SidebarToggle;
+
+SidebarToggle.propTypes = {
+    handleSidebar: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired
+}
