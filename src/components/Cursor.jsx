@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const StyledCursor = styled.span`
-    z-index: 999;
+    z-index: 1000;
     position: absolute;
     width: .5em;
     height: .5em;
@@ -12,7 +12,7 @@ const StyledCursor = styled.span`
     pointer-events: none;
 `;
 const StyledCursorTracker = styled.span`
-    z-index: 999;
+    z-index: 1000;
     position: absolute;
     width: 1.75em;
     height: 1.75em;
@@ -54,30 +54,26 @@ const StyledCursorTracker = styled.span`
 `;
 
 const Cursor = () => {
-    // const [ cursorPosition, setCursorPosition ] = useState({x: 0, y: 0});
-    const [ mouseX, setMouseX ] = useState(0);
-    const [ mouseY, setMouseY ] = useState(0);
+    const [ cursorPosition, setCursorPosition ] = useState({x: 0, y: 0});
+    const handleCursorPosition = (event) => {
+        const { clientY, clientX } = event;
+        setCursorPosition({x: clientX, y: clientY})
+    }
     useEffect(() => {
         window.addEventListener('mousemove', handleCursorPosition);
         return () => {
             window.removeEventListener('mousemove', handleCursorPosition);
         };
     })
-    const handleCursorPosition = (event) => {
-        const { clientY, clientX } = event;
-        setMouseX(clientX);
-        setMouseY(clientY);
-        // setCursorPosition({x: clientX, y: clientY})
-    }
-    // const { x, y } = cursorPosition;
+    const { x, y } = cursorPosition
     return ( 
         <>
-            <StyledCursor style={{top: mouseY, left: mouseX}} />
-            <StyledCursorTracker style={{top: mouseY, left: mouseX}}>
-                    <span className="top-left"></span>
-                    <span className="top-right"></span>
-                    <span className="bottom-left"></span>
-                    <span className="bottom-right"></span>
+            <StyledCursor style={{top: y, left: x}} />
+            <StyledCursorTracker style={{top: y, left: x}}>
+                <span className="top-left"></span>
+                <span className="top-right"></span>
+                <span className="bottom-left"></span>
+                <span className="bottom-right"></span>
             </StyledCursorTracker>
         </>
     );
