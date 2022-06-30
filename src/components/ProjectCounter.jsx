@@ -66,7 +66,7 @@ const ProjectCounter = () => {
             <Counter>{ currentProject + 1 }</Counter>
             <Separator />
             <Counter>{ projectsData.length }</Counter>
-            <ControlButton onClick={() => handleProjectCounter('PREVIOUS')}>
+            <ControlButton onClick={() => handleProjectCounter('NEXT')}>
                 <FontAwesomeIcon icon={faCaretRight} />
             </ControlButton>
         </StyledProjectCounter>
