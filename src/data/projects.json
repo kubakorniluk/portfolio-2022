@@ -5,7 +5,7 @@
         "title": "Easy online shop",
         "client": "Mobile Sat",
         "website": "https://easyonlineshop.pl/",
-        "sourceCode": "https://github.com/kubakorniluk/clients_mobile-sat"
+        "sourceCode": "https://github.com/kubakorniluk/easyonlineshop"
     },
     {
         "id": 2,
@@ -13,6 +13,6 @@
         "title": "Rewal Bud",
         "client": "Rewal-Bud",
         "website": "https://rewalbud.pl/",
-        "sourceCode": "https://github.com/kubakorniluk/clients_rewal-bud"
+        "sourceCode": "https://github.com/kubakorniluk/rewal-bud"
     }
 ]
