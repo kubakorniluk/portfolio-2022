@@ -11,7 +11,7 @@ const StyledButton = styled.button`
     font-family: 'Inconsolata', monospace;
     font-weight: 400;
     font-size: 100%;
-    padding: 1.25em 1.5em;
+    padding: 1em 1.5em;
     transition: .1s;
     span {
         position: absolute;
@@ -21,30 +21,31 @@ const StyledButton = styled.button`
         transition: .1s;
     }
     .top-left {
-        border-top: .1em solid #ffffff;
-        border-left: .1em solid #ffffff;
+        border-top: .075em solid #ffffff;
+        border-left: .075em solid #ffffff;
         top: 0;
         left: 0;
     }
     .top-right {
-        border-top: .1em solid #ffffff;
-        border-right: .1em solid #ffffff;
+        border-top: .075em solid #ffffff;
+        border-right: .075em solid #ffffff;
         top: 0;
         right: 0;
     }
     .bottom-left {
-        border-bottom: .1em solid #ffffff;
-        border-left: .1em solid #ffffff;
+        border-bottom: .075em solid #ffffff;
+        border-left: .075em solid #ffffff;
         bottom: 0;
         left: 0;
     }
     .bottom-right {
-        border-bottom: .1em solid #ffffff;
-        border-right: .1em solid #ffffff;
+        border-bottom: .075em solid #ffffff;
+        border-right: .075em solid #ffffff;
         bottom: 0;
         right: 0;
     }
     &:hover {
+        cursor: pointer;
         background-color: #ffffff;
         color: #070707;
         .top-left {
@@ -64,11 +65,17 @@ const StyledButton = styled.button`
             right: -.5em;
         }
     }
+    @media only screen and (min-width: 0px) and (max-width: 320.99px) { font-size: 90%; }
+    @media only screen and (min-width: 321px) and (max-width: 576.99px) { font-size: 95%; }
+    @media only screen and (min-width: 577px) and (max-width: 768.99px) { font-size: 90%; }
+    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { font-size: 90%; } 
+    @media only screen and (min-width: 1025px) and (max-width: 1366.99px) { font-size: 95%; }
 `;
+
 const Button = ({ 
-    value, 
-    onClick, 
-    type
+    children,
+    type,
+    onClick
 }) => {
     return (
         <StyledButton 
@@ -77,7 +84,7 @@ const Button = ({
         >
             <span className="top-left"></span>
             <span className="top-right"></span>
-            { value }
+            { children }
             <span className="bottom-left"></span>
             <span className="bottom-right"></span>
         </StyledButton>
@@ -87,7 +94,7 @@ const Button = ({
 export default Button;
 
 Button.propTypes = {
+    children: PropTypes.any.isRequired,
     type: PropTypes.string.isRequired,
-    onClick: PropTypes.func,
-    value: PropTypes.string.isRequired
+    onClick: PropTypes.func
 }
