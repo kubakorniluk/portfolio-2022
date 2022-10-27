@@ -6,10 +6,10 @@ const StyledSidebarToggle = styled.a`
     display: flex;
     flex-direction: column;
     gap: .3em;
-    padding: 1em;
     float: right;
     z-index: 999;
 `;
+
 const StyledToggleBar = styled.span`
     display: block;
     width: 1.5em;
@@ -22,6 +22,7 @@ const StyledToggleBar = styled.span`
         width: 1em;
     }
 `;
+
 const SidebarToggle = ({ 
     handleSidebar,
     isOpen 

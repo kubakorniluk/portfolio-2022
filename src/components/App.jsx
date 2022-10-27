@@ -1,14 +1,11 @@
-import React, { 
-    useState, 
-    useEffect,
-    lazy, 
-    Suspense 
-} from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import ProjectContextProvider from './ProjectContextProvider';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
+import Navbar from './Navbar';
+
 const GlobalStyles = createGlobalStyle`
     *, *:before, *:after {
         box-sizing: border-box;
@@ -32,20 +29,12 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const App = () => {
-    const [ screenWidth, setScreenWidth ] = useState(window.innerWidth);
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    })
-
-    const handleResize = () => setScreenWidth(window.innerWidth);
-
     return (
         <>
             <GlobalStyles />
-            <Header></Header>
+            <Header>
+                <Navbar />
+            </Header>
             <Main></Main>
             <Footer></Footer>
         </>
