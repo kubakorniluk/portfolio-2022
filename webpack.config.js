@@ -15,9 +15,6 @@ module.exports = {
         extensions: ['.jsx', '.js']
     },
     devtool: 'eval',
-    devServer: {
-        historyApiFallback: true
-    },
     plugins: [
         new CleanWebpackPlugin(),
         new BundleAnalyzerPlugin(),
