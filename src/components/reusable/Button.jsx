@@ -5,12 +5,13 @@ import PropTypes from 'prop-types';
 const StyledButton = styled.button`
     position: relative;
     display: block;
-    background-color: rgba(255, 255, 255, 0.075);
+    background-color: ${props => props.primary ? 'rgba(255, 255, 255, 0.075)' : 'rgba(18, 18, 18, 0.15)'};
     border: 0;
-    color: #ffffff;
+    color: ${props => props.primary ? '#ffffff' : '#121212'};
     font-family: 'Inconsolata', monospace;
     font-weight: 400;
     font-size: 100%;
+    margin: 0;
     padding: 1em 1.5em;
     transition: .1s;
     span {
@@ -21,33 +22,33 @@ const StyledButton = styled.button`
         transition: .1s;
     }
     .top-left {
-        border-top: .075em solid #ffffff;
-        border-left: .075em solid #ffffff;
+        border-top: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
+        border-left: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
         top: 0;
         left: 0;
     }
     .top-right {
-        border-top: .075em solid #ffffff;
-        border-right: .075em solid #ffffff;
+        border-top: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
+        border-right: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
         top: 0;
         right: 0;
     }
     .bottom-left {
-        border-bottom: .075em solid #ffffff;
-        border-left: .075em solid #ffffff;
+        border-bottom: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
+        border-left: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
         bottom: 0;
         left: 0;
     }
     .bottom-right {
-        border-bottom: .075em solid #ffffff;
-        border-right: .075em solid #ffffff;
+        border-bottom: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
+        border-right: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
         bottom: 0;
         right: 0;
     }
     &:hover {
         cursor: pointer;
-        background-color: #ffffff;
-        color: #070707;
+        background-color: ${props => props.primary ? '#ffffff' : '#121212'};
+        color: ${props => props.primary ? '#121212' : '#ffffff'};
         .top-left {
             top: -.5em;
             left: -.5em;
@@ -75,12 +76,14 @@ const StyledButton = styled.button`
 const Button = ({ 
     children,
     type,
-    onClick
+    onClick,
+    ...props
 }) => {
     return (
         <StyledButton 
             type={type} 
             onClick={onClick}
+            { ...props }
         >
             <span className="top-left"></span>
             <span className="top-right"></span>
