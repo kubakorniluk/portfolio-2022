@@ -28,7 +28,7 @@ const Navigation = () => {
         <StyledNavigation>
             <NavLink>Bio</NavLink>
             <NavLink>Portfolio</NavLink>
-            <Button type="button">Współpraca</Button>
+            <Button type="button" primary>Współpraca</Button>
         </StyledNavigation>
     );
 }
