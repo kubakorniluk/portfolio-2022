@@ -2,9 +2,10 @@ import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import ProjectContextProvider from './ProjectContextProvider';
 import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
 import Navbar from './Navbar';
+import Main from './Main';
+import Bio from './Bio';
+import Footer from './Footer';
 
 const GlobalStyles = createGlobalStyle`
     *, *:before, *:after {
@@ -35,7 +36,9 @@ const App = () => {
             <Header>
                 <Navbar />
             </Header>
-            <Main></Main>
+            <Main>
+                <Bio />
+            </Main>
             <Footer></Footer>
         </>
     );
