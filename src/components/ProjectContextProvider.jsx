@@ -26,7 +26,7 @@ const ProjectContextProvider = ({
     };
 
     return (
-        <ProjectContext.Provider value={value}>
+        <ProjectContext.Provider value={ value }>
             { children }
         </ProjectContext.Provider>
     )
