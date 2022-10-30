@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const StyledIcon = styled.a`
     margin: 0;
-    font-size: 125%;
-    color: #${props => props.primary ? '#ffffff' : '#121212'};
+    font-size: 150%;
+    color: ${props => props.primary ? '#ffffff' : '#121212'};
     text-decoration: none;
     &:hover {
         cursor: pointer;
@@ -14,9 +14,17 @@ const StyledIcon = styled.a`
     @media only screen and (min-width: 321px) and (max-width: 576.99px) { font-size: 150%; }
 `;
 
-const Icon = ({ children, href }) => {
+const Icon = ({ 
+    children, 
+    href, 
+    ...props 
+}) => {
     return (
-        <StyledIcon href={href} target="_blank">
+        <StyledIcon 
+            href={ href } 
+            target="_blank" 
+            { ...props }
+        >
             { children }
         </StyledIcon>
     );

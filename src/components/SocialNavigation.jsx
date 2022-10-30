@@ -19,13 +19,13 @@ const SocialNavigation = () => {
     return (
         <StyledSocialNavigation>
             <IconGroup href="https://github.com/kubakorniluk" target="_blank">
-                <Icon>
+                <Icon primary>
                     <FontAwesomeIcon icon={faGithubSquare} />
                 </Icon>
-                <Icon>
+                <Icon primary>
                     <FontAwesomeIcon icon={faLinkedin} />
                 </Icon>
-                <Icon>
+                <Icon primary>
                     <FontAwesomeIcon icon={faInstagramSquare} />
                 </Icon>
             </IconGroup>
