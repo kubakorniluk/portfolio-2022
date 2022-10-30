@@ -61,8 +61,8 @@ const Bio = () => {
         margin: '5em 0em'
     }
     return (
-        <Section type="bio" style={ bioStyling }>
-            <Heading>/bio</Heading>
+        <Section role="bio" style={ bioStyling }>
+            <Heading>$_#01/<span style={{color: '#584cea'}}>bio</span></Heading>
             <StyledBio>
                 <b>Junior Front-End Developer</b>, artysta kombinator, człowiek renesansu. 
                 Specjalizuję się w tworzeniu unikatowych, wysoce interaktywnych <b>landing page’ów</b>. 

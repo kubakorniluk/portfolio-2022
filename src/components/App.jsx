@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import { createGlobalStyle } from 'styled-components';
 import ProjectContextProvider from './ProjectContextProvider';
 import Header from './Header';
@@ -30,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const App = () => {
+    const Portfolio = React.lazy(() => import('./Portfolio'));
     return (
         <>
             <GlobalStyles />
@@ -38,6 +39,11 @@ const App = () => {
             </Header>
             <Main>
                 <Bio />
+                <ProjectContextProvider>
+                    <Suspense fallback={null}>
+                        <Portfolio />
+                    </Suspense>
+                </ProjectContextProvider>
             </Main>
             <Footer></Footer>
         </>

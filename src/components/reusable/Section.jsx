@@ -17,12 +17,12 @@ const StyledSection = styled.section`
 `;
 
 const Section = ({ 
-    type, 
+    role, 
     style, 
     children 
 }) => {
     return (
-        <StyledSection id={type} style={style}>
+        <StyledSection id={role} style={style}>
             { children }
         </StyledSection>
     );
@@ -32,6 +32,6 @@ export default Section;
 
 Section.propTypes = {
     children: PropTypes.any.isRequired,
-    type: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
     style: PropTypes.object
 }
