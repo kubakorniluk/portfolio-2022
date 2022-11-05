@@ -5,12 +5,12 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Main from './Main';
 import Bio from './Bio';
+import Portfolio from './Portfolio';
+import Details from './Details';
 import Footer from './Footer';
 
 const GlobalStyles = createGlobalStyle`
-    *, *:before, *:after {
-        box-sizing: border-box;
-    }
+    *, *:before, *:after { box-sizing: border-box; }
     body {
         margin: 0;
         -webkit-font-smoothing: antialiased;
@@ -23,14 +23,10 @@ const GlobalStyles = createGlobalStyle`
         display: flex;
         flex-direction: column;
     }
-    a {
-        text-decoration: none;
-        color: #000000;
-    }
+    a { text-decoration: none; }
 `;
 
 const App = () => {
-    const Portfolio = React.lazy(() => import('./Portfolio'));
     return (
         <>
             <GlobalStyles />
@@ -40,12 +36,11 @@ const App = () => {
             <Main>
                 <Bio />
                 <ProjectContextProvider>
-                    <Suspense fallback={null}>
-                        <Portfolio />
-                    </Suspense>
+                    <Portfolio />
                 </ProjectContextProvider>
+                <Details />
             </Main>
-            <Footer></Footer>
+            <Footer />
         </>
     );
 }

@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
     width: 100%;
     height: 100vh;
     background-color: #121212;
-    padding: 1.25em 6.25em;
+    padding: 1.25em 8em;
     @media only screen and (min-width: 0px) and (max-width: 320.99px) { padding: 1.5em 2em; }
     @media only screen and (min-width: 321px) and (max-width: 576.99px) { padding: 2em; }
     @media only screen and (min-width: 577px) and (max-width: 768.99px) { padding: 2em 4em; }

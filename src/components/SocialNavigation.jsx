@@ -12,7 +12,6 @@ const StyledSocialNavigation = styled.div`
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    gap: 2em;
 `;
 
 const SocialNavigation = () => {
@@ -20,13 +19,13 @@ const SocialNavigation = () => {
         <StyledSocialNavigation>
             <IconGroup href="https://github.com/kubakorniluk" target="_blank">
                 <Icon primary>
-                    <FontAwesomeIcon icon={faGithubSquare} />
+                    <FontAwesomeIcon icon={ faGithubSquare } />
                 </Icon>
                 <Icon primary>
-                    <FontAwesomeIcon icon={faLinkedin} />
+                    <FontAwesomeIcon icon={ faLinkedin } />
                 </Icon>
                 <Icon primary>
-                    <FontAwesomeIcon icon={faInstagramSquare} />
+                    <FontAwesomeIcon icon={ faInstagramSquare } />
                 </Icon>
             </IconGroup>
         </StyledSocialNavigation>
