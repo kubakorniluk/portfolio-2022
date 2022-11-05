@@ -12,8 +12,7 @@ const StyledNavbar = styled.nav`
         align-items: center;
         width: 100%;
         height: auto;
-        backdrop-filter: blur(2.5px);
-        transition: .5s;
+        backdrop-filter: blur(5px);
     `;
 
 const Navbar = () => {
@@ -50,7 +49,9 @@ const Navbar = () => {
     //     top: '0',
     //     left: '0',
     //     padding: 'inherit',
-    //     backgroundColor: 'rgba(18, 18, 18, 0.5)',
+    //     paddingTop: '1em',
+    //     paddingBottom: '1em',
+    //     backgroundColor: 'rgba(18, 18, 18, .5)'
     // }
     return (
         <StyledNavbar>

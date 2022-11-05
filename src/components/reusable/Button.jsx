@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 const StyledButton = styled.button`
     position: relative;
     display: block;
-    background-color: ${props => props.primary ? 'rgba(255, 255, 255, 0.075)' : 'rgba(18, 18, 18, 0.15)'};
+    /* if primary attribute is active, change button color */
+    background-color: ${props => props.primary ? 'rgba(255, 255, 255, 0.075)' : 'rgb(238, 238, 238)'};
     border: 0;
     color: ${props => props.primary ? '#ffffff' : '#121212'};
     font-family: 'Inconsolata', monospace;
@@ -22,26 +23,26 @@ const StyledButton = styled.button`
         transition: .1s;
     }
     .top-left {
-        border-top: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
-        border-left: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
+        border-top: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
+        border-left: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
         top: 0;
         left: 0;
     }
     .top-right {
-        border-top: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
-        border-right: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
+        border-top: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
+        border-right: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
         top: 0;
         right: 0;
     }
     .bottom-left {
-        border-bottom: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
-        border-left: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
+        border-bottom: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
+        border-left: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
         bottom: 0;
         left: 0;
     }
     .bottom-right {
-        border-bottom: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
-        border-right: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};;
+        border-bottom: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
+        border-right: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
         bottom: 0;
         right: 0;
     }

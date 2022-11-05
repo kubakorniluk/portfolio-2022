@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { ProjectContext } from './ProjectContextProvider';
 import Section from './reusable/Section';
+import SectionHeading from './reusable/SectionHeading';
 import Project from './Project';
 
 const StyledPortfolio = styled.div`
@@ -10,10 +11,7 @@ const StyledPortfolio = styled.div`
     gap: 2em;
     width: 100%;
     overflow-x: scroll;
-    padding: 4em 0;
-    ::-webkit-scrollbar {
-        height: 5px;
-    }
+    ::-webkit-scrollbar { height: 5px; }
     ::-webkit-scrollbar-track {
         border-radius: 10px;
         box-shadow: inset 0 0 5px #969696;
@@ -22,9 +20,7 @@ const StyledPortfolio = styled.div`
         border-radius:10px;
         background-color: #584cea;
     }    
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(88, 76, 234, .75);
-    }
+    ::-webkit-scrollbar-thumb:hover { background-color: rgba(88, 76, 234, .75); }
 `;
 
 const Heading = styled.div`
@@ -34,18 +30,6 @@ const Heading = styled.div`
     width: 100%;
 `;
 
-const SectionTitle = styled.h2`
-    font-size: 110%;
-    font-family: 'Inconsolata', monospace;
-    font-weight: 500;
-    color: #969696;
-    margin: 0;
-    @media only screen and (min-width: 0px) and (max-width: 320.99px) { font-size: 85%; }
-    @media only screen and (min-width: 321px) and (max-width: 576.99px) { font-size: 100%; }
-    @media only screen and (min-width: 577px) and (max-width: 768.99px) { font-size: 100%; }
-    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { font-size: 95%; } 
-    @media only screen and (min-width: 1025px) and (max-width: 1366.99px) { font-size: 100%; }
-`;
 const ProjectCounter = styled.h2`
     font-size: 110%;
     font-family: 'Inconsolata', monospace;
@@ -63,7 +47,8 @@ const Portfolio = () => {
     const { projectsData } = useContext(ProjectContext)
 
     const portfolioStyling = {
-        backgroundColor: '#ebebeb',
+        backgroundColor: '#EEEEEE',
+        gap: '2em',
         paddingTop: '5em',
         paddingBottom: '5em'
     }
@@ -71,7 +56,7 @@ const Portfolio = () => {
     return (
         <Section role="portfolio" style={ portfolioStyling }>
             <Heading>
-                <SectionTitle>$_#02/<span style={{color: '#584cea'}}>portfolio</span></SectionTitle>
+                <SectionHeading>$_#02/<span style={{color: '#584cea'}}>portfolio</span></SectionHeading>
                 <ProjectCounter>{ projectsData.length } - { projectsData.length }</ProjectCounter>
             </Heading>
             <StyledPortfolio>

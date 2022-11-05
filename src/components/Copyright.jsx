@@ -17,7 +17,7 @@ const StyledCopyright = styled.small`
 const Copyright = () => {
 
     const displayCurrentDate = new Date().getFullYear();
-
+    
     return (
         <StyledCopyright>&copy; Kuba Korniluk { displayCurrentDate }</StyledCopyright>
     );
