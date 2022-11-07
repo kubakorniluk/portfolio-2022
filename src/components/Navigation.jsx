@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './reusable/Button';
 
 const StyledNavigation = styled.div`
     display: flex;
@@ -26,9 +25,9 @@ const NavLink = styled.a`
 const Navigation = () => {
     return (
         <StyledNavigation>
-            <NavLink>Bio</NavLink>
+            <NavLink>Biogram</NavLink>
             <NavLink>Portfolio</NavLink>
-            <Button type="button" primary>Współpraca</Button>
+            <NavLink>Współpraca</NavLink>
         </StyledNavigation>
     );
 }
