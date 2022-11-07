@@ -16,9 +16,9 @@ const Bio = () => {
 
     return (
         <Section role="bio" style={ bioStyling }>
-            {/* <SectionHeading>
+            <SectionHeading>
                 $_#01/<span style={{color: '#584cea'}}>bio</span>
-            </SectionHeading> */}
+            </SectionHeading>
             <Text>
                 <b>Junior Front-End Developer</b>, artysta kombinator, człowiek renesansu. 
                 Specjalizuję się w tworzeniu unikatowych, wysoce interaktywnych <b>landing page’ów</b>. 

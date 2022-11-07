@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import Navigation from './Navigation';
 import SidebarToggle from './SidebarToggle';
+import SocialNavigation from './SocialNavigation';
 
 const StyledNavbar = styled.nav`
         position: relative;
@@ -12,7 +13,7 @@ const StyledNavbar = styled.nav`
         align-items: center;
         width: 100%;
         height: auto;
-        backdrop-filter: blur(5px);
+        /* backdrop-filter: blur(5px); */
     `;
 
 const Navbar = () => {
@@ -56,7 +57,12 @@ const Navbar = () => {
     return (
         <StyledNavbar>
             <Logo />
-            { (screenWidth > 768) ? <Navigation /> : <SidebarToggle /> }
+            { (screenWidth > 768) ? 
+            <>
+                <Navigation />
+                <SocialNavigation /> 
+            </> 
+            : <SidebarToggle /> }
         </StyledNavbar>    
     );
 }

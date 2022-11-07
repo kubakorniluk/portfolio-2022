@@ -35,10 +35,21 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpe?g|gif)$/,
-                include: path.resolve(__dirname, 'src/assets'),
-                loader:'file-loader',
+                include: path.resolve(__dirname, 'src/assets/img'),
+                loader:'file',
                 options: {
                     outputPath: 'assets/img',
+                    name: '[name].[ext]',
+                    esModule: false
+                }
+            },
+            // this code alone doesn't work, video must be imported with the 'file-loader' prefix anyway
+            {
+                test: /\.mp4$/,
+                include: path.resolve(__dirname, 'src/assets/background'),
+                loader:'file',
+                options: {
+                    outputPath: 'assets/background',
                     name: '[name].[ext]',
                     esModule: false
                 }
