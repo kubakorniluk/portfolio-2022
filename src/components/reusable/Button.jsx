@@ -6,7 +6,7 @@ const StyledButton = styled.button`
     position: relative;
     display: block;
     /* if primary attribute is active, change button color */
-    background-color: ${props => props.primary ? 'rgba(255, 255, 255, 0.075)' : 'rgb(238, 238, 238)'};
+    background-color: ${props => props.primary ? 'rgba(255, 255, 255, 0.15)' : 'rgb(238, 238, 238)'};
     border: 0;
     color: ${props => props.primary ? '#ffffff' : '#121212'};
     font-family: 'Inconsolata', monospace;

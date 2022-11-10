@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { scrollDown } from './reusable/scrollDown';
 
 const StyledNavigation = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: start;
-    gap: 2em;
+    gap: 6em;
+    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { gap: 3em; }
 `;
 
 const NavLink = styled.a`
@@ -13,7 +15,7 @@ const NavLink = styled.a`
     font-family: 'Inconsolata', monospace;
     font-weight: 400;
     color: #ffffff;
-    padding: 1em;
+
     :hover {
         cursor: pointer;
         color: #584cea;
@@ -25,9 +27,9 @@ const NavLink = styled.a`
 const Navigation = () => {
     return (
         <StyledNavigation>
-            <NavLink>Biogram</NavLink>
-            <NavLink>Portfolio</NavLink>
-            <NavLink>Współpraca</NavLink>
+            <NavLink onClick={ () => scrollDown('bio') }>Biogram</NavLink>
+            <NavLink onClick={ () => scrollDown('portfolio') }>Portfolio</NavLink>
+            <NavLink onClick={ () => scrollDown('contact') }>Współpraca</NavLink>
         </StyledNavigation>
     );
 }

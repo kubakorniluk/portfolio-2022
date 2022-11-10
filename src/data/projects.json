@@ -5,6 +5,7 @@
         "title": "Easy online shop",
         "client": "Mobile Sat",
         "desc": "Sklep internetowy bez back-endu? Czemu nie :p",
+        "date": "Marzec 2021",
         "website": "https://easyonlineshop.pl/",
         "sourceCode": "https://github.com/kubakorniluk/easyonlineshop"
     },
@@ -14,6 +15,7 @@
         "title": "Rewal Bud",
         "client": "Rewal-Bud",
         "desc": "Landing page dla firmy z branży wykończeniowej.",
+        "date": "Wrzesień 2020",
         "website": "https://rewalbud.pl/",
         "sourceCode": "https://github.com/kubakorniluk/rewal-bud"
     }

@@ -1,12 +1,13 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import ProjectContextProvider from './ProjectContextProvider';
 import Header from './Header';
 import Navbar from './Navbar';
+import Welcome from './Welcome';
 import Main from './Main';
 import Bio from './Bio';
 import Portfolio from './Portfolio';
-import Details from './Details';
+import Contact from './Contact';
 import Footer from './Footer';
 
 const GlobalStyles = createGlobalStyle`
@@ -32,13 +33,14 @@ const App = () => {
             <GlobalStyles />
             <Header>
                 <Navbar />
+                <Welcome />
             </Header>
             <Main>
                 <Bio />
                 <ProjectContextProvider>
                     <Portfolio />
                 </ProjectContextProvider>
-                <Details />
+                <Contact />
             </Main>
             <Footer />
         </>

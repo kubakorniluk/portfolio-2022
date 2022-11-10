@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const StyledIcon = styled.a`
     margin: 0;
     font-size: 150%;
-    color: ${props => props.primary ? '#ffffff' : '#121212'};
+    color: ${props => props.color || '#ffffff'};
     text-decoration: none;
     &:hover {
         cursor: pointer;
@@ -17,13 +17,15 @@ const StyledIcon = styled.a`
 
 const Icon = ({ 
     children, 
-    href, 
+    href,
+    color, 
     ...props 
 }) => {
     return (
         <StyledIcon 
             href={ href } 
-            target="_blank" 
+            target="_blank"
+            color={ color } 
             { ...props }
         >
             { children }
@@ -35,5 +37,5 @@ export default Icon;
 
 Icon.propTypes = {
     children: PropTypes.any.isRequired,
-    href: PropTypes.string.isRequired
+    href: PropTypes.string
 }

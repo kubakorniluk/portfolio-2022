@@ -3,12 +3,15 @@ import styled from 'styled-components';
 
 const StyledLink = styled.a`
     margin: 0;
-    font-size: 100%;
+    font-size: 110%;
     font-family: 'Inconsolata', monospace;
     font-weight: 400;
-    color: #584cea;
     width: auto;
-    :hover { text-decoration: underline; }
+    text-decoration: underline;
+    color: ${ props => props.color || '#121212' };
+    &:hover {
+        color: #584cea;
+    }
     @media only screen and (min-width: 0px) and (max-width: 320.99px) { font-size: 90%; }
     @media only screen and (min-width: 321px) and (max-width: 576.99px) { font-size: 100%; }
     @media only screen and (min-width: 577px) and (max-width: 768.99px) { font-size: 100%; }
@@ -17,12 +20,17 @@ const StyledLink = styled.a`
 `;
 
 const Link = ({ 
-    children, 
+    children,
+    color, 
     href, 
     ...props 
 }) => {
     return (
-        <StyledLink href={ href } { ...props }>
+        <StyledLink
+            color={ color } 
+            href={ href } 
+            { ...props }
+        >
             { children }
         </StyledLink>
     );

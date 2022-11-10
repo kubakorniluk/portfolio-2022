@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
 import Navigation from './Navigation';
-import SidebarToggle from './SidebarToggle';
 import SocialNavigation from './SocialNavigation';
 
 const StyledNavbar = styled.nav`
@@ -62,7 +61,7 @@ const Navbar = () => {
                 <Navigation />
                 <SocialNavigation /> 
             </> 
-            : <SidebarToggle /> }
+            : <SocialNavigation /> }
         </StyledNavbar>    
     );
 }

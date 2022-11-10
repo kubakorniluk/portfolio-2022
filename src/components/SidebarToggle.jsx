@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const StyledSidebarToggle = styled.a`
     display: flex;
     flex-direction: column;
+    gap: .3em;
     float: right;
     z-index: 999;
 `;

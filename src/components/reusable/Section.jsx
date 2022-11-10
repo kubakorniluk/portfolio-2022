@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const StyledSection = styled.section`
+export const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -18,11 +18,11 @@ const StyledSection = styled.section`
 
 const Section = ({ 
     role, 
-    style, 
-    children 
+    children,
+    ...props 
 }) => {
     return (
-        <StyledSection id={role} style={style}>
+        <StyledSection id={ role } { ...props }>
             { children }
         </StyledSection>
     );
@@ -32,6 +32,5 @@ export default Section;
 
 Section.propTypes = {
     children: PropTypes.any.isRequired,
-    role: PropTypes.string.isRequired,
-    style: PropTypes.object
+    role: PropTypes.string.isRequired
 }

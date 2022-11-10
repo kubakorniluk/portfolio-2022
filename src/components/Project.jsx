@@ -10,11 +10,10 @@ const StyledProject = styled.figure`
     flex-direction: column;
     flex-shrink: 0;
     width: 40%;
-    margin: 0;
-    padding-bottom: 2em;
+    margin: 0 0 2.5em 0;
     /* background-color: #ffffff; */
-    @media only screen and (min-width: 0px) and (max-width: 320.99px) { width: 100%; }
-    @media only screen and (min-width: 321px) and (max-width: 576.99px) { width: 100%; }
+    @media only screen and (min-width: 0px) and (max-width: 320.99px) { width: 85%; }
+    @media only screen and (min-width: 321px) and (max-width: 576.99px) { width: 85%; }
     @media only screen and (min-width: 577px) and (max-width: 768.99px) { width: 50%; }
     @media only screen and (min-width: 769px) and (max-width: 1024.99px) { width: 50%; } 
     @media only screen and (min-width: 1025px) and (max-width: 1366.99px) { width: 40%; }
@@ -27,7 +26,7 @@ const ProjectInfo = styled.figcaption`
     flex-direction: column;
     justify-content: space-between;
     gap: 1em;
-    padding: 1em 0;
+    padding: 1em 0 0 0;
     border-top: 1px solid #ebebeb;
 `;
 
@@ -58,7 +57,7 @@ const Description = styled.p`
     font-weight: 400;
     color: #969696;
     line-height: 1.5em;
-    @media only screen and (min-width: 0px) and (max-width: 320.99px) { font-size: 85%; }
+    @media only screen and (min-width: 0px) and (max-width: 320.99px) { font-size: 90%; }
     @media only screen and (min-width: 321px) and (max-width: 576.99px) { font-size: 100%; }
     @media only screen and (min-width: 577px) and (max-width: 768.99px) { font-size: 100%; }
     @media only screen and (min-width: 769px) and (max-width: 1024.99px) { font-size: 95%; } 
@@ -69,23 +68,29 @@ const Project = ({ data }) => {
     const {  
         img, 
         title, 
-        desc, 
+        desc,
+        date,
         website, 
         sourceCode 
     } = data;
     return (
         <StyledProject>
-            <Img src={require(`../assets/img/${img}`)} alt="Zdjęcie przedstawiające wygląd projektu"/>
+            <Img src={require(`../assets/img/${img}`)} alt="Zdjęcie przedstawiające wygląd projektu."/>
             <ProjectInfo>
                 <InfoWrapper>
                     <Title>{ title }</Title>
-                    <Icon href={ sourceCode } target="_blank">
+                    <Icon 
+                        href={ sourceCode } 
+                        target="_blank"
+                        color="#121212"
+                    >
                         <FontAwesomeIcon icon={faGithubSquare} />
                     </Icon>
                 </InfoWrapper>
-                <Description>//{ desc }</Description>
+                <Description>{ desc }</Description>
+                <Description>Data: { date }</Description>
+                <Link href={ website } target="_blank">Zobacz projekt</Link>
             </ProjectInfo>
-            <Link href={ website }>Zobacz projekt</Link>
         </StyledProject>
     );
 }
