@@ -15,9 +15,6 @@ module.exports = {
         extensions: ['.jsx', '.js']
     },
     devtool: 'eval',
-    devServer: {
-        historyApiFallback: true
-    },
     plugins: [
         new CleanWebpackPlugin(),
         new BundleAnalyzerPlugin(),
@@ -38,7 +35,7 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpe?g|gif)$/,
-                include: path.resolve(__dirname, 'src/assets'),
+                include: path.resolve(__dirname, 'src/assets/img'),
                 loader:'file-loader',
                 options: {
                     outputPath: 'assets/img',

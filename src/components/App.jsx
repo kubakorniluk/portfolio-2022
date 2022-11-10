@@ -1,74 +1,48 @@
-import React, { 
-    useState, 
-    useEffect, 
-    lazy, 
-    Suspense 
-} from 'react';
-import { 
-    BrowserRouter, 
-    Route, 
-    Switch 
-} from 'react-router-dom';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import Cursor from './Cursor';
 import ProjectContextProvider from './ProjectContextProvider';
-import LoadingScreen from './LoadingScreen';
+import Header from './Header';
+import Navbar from './Navbar';
+import Welcome from './Welcome';
+import Main from './Main';
+import Bio from './Bio';
+import Portfolio from './Portfolio';
+import Contact from './Contact';
+import Footer from './Footer';
 
 const GlobalStyles = createGlobalStyle`
-    html {
-        box-sizing: border-box;
-        user-select: none;
-    }
-    *, *:before, *:after {
-        box-sizing: inherit;
-        cursor: none;
-    }
+    *, *:before, *:after { box-sizing: border-box; }
     body {
         margin: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-color: #ffffff;
+        width: 100%;
+        height: auto;
     }
-    a {
-        text-decoration: none;
-        color: #ffffff;
+    #root {
+        display: flex;
+        flex-direction: column;
     }
-    *:focus {
-        outline: 0;
-    }
+    a { text-decoration: none; }
 `;
 
 const App = () => {
-    const [ screenWidth, setScreenWidth ] = useState(window.innerWidth);
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    })
-    const handleResize = () => setScreenWidth(window.innerWidth);
-
-    const Homepage = lazy(() => {
-        return new Promise(resolve => {
-            setTimeout(
-                () => resolve(import('../routes/Homepage')), 
-            1000)
-        })
-    });
     return (
         <>
-            { (screenWidth >= 1024) ? <Cursor /> : null }
             <GlobalStyles />
-            <BrowserRouter>
-                <Suspense fallback={<LoadingScreen />}>
-                    <Switch>
-                        <Route exact path="/">
-                            <ProjectContextProvider>
-                                <Homepage />
-                            </ProjectContextProvider>
-                        </Route>
-                    </Switch>   
-                </Suspense>
-            </BrowserRouter>
+            <Header>
+                <Navbar />
+                <Welcome />
+            </Header>
+            <Main>
+                <Bio />
+                <ProjectContextProvider>
+                    <Portfolio />
+                </ProjectContextProvider>
+                <Contact />
+            </Main>
+            <Footer />
         </>
     );
 }
