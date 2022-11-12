@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons/faGithubSquare.js';
 import Icon from './reusable/Icon';
@@ -96,3 +97,17 @@ const Project = ({ data }) => {
 }
  
 export default Project;
+
+
+Project.propTypes = {
+    data: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        img: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        client: PropTypes.string.isRequired,
+        desc: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        website: PropTypes.string.isRequired,
+        sourceCode: PropTypes.string.isRequired
+    }).isRequired
+}

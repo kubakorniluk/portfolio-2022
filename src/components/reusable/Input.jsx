@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledInput = styled.input`
     width: 100%;
@@ -36,3 +37,9 @@ const Input = ({
 }
  
 export default Input;
+
+Input.propTypes = {
+    type: PropTypes.string.isRequired,
+    value: PropTypes.string,
+    placeholder: PropTypes.string.isRequired
+}

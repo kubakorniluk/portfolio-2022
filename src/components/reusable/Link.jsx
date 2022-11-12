@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledLink = styled.a`
     margin: 0;
@@ -37,3 +38,9 @@ const Link = ({
 }
  
 export default Link;
+
+Link.propTypes = {
+    children: PropTypes.any.isRequired,
+    color: PropTypes.string,
+    href: PropTypes.string
+}

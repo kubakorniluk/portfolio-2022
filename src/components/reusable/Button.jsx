@@ -100,5 +100,6 @@ export default Button;
 Button.propTypes = {
     children: PropTypes.any.isRequired,
     type: PropTypes.string.isRequired,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    primary: PropTypes.bool
 }

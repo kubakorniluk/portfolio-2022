@@ -11,7 +11,7 @@ const StyledPortfolio = styled.div`
     flex-direction: row;
     gap: 1.75em;
     width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
     ::-webkit-scrollbar { height: .25em; }
     ::-webkit-scrollbar-track {
         border-radius: 10px;

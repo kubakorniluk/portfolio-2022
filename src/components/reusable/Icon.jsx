@@ -37,5 +37,6 @@ export default Icon;
 
 Icon.propTypes = {
     children: PropTypes.any.isRequired,
-    href: PropTypes.string
+    href: PropTypes.string,
+    color: PropTypes.string
 }

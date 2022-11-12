@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledTextArea = styled.textarea`
     width: 100%;
@@ -41,3 +42,11 @@ const TextArea = ({
 }
  
 export default TextArea;
+
+TextArea.propTypes = {
+    rows: PropTypes.number.isRequired,
+    columns: PropTypes.number,
+    type: PropTypes.string.isRequired,
+    value: PropTypes.string,
+    placeholder: PropTypes.string.isRequired,
+}
