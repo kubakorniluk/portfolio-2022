@@ -1,27 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { scrollDown } from './reusable/scrollDown';
+import { scrollDown } from './helpers/scrollDown';
+import NavLink from './NavLink';
 
 const StyledNavigation = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: start;
-    gap: 6em;
-    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { gap: 3em; }
-`;
-
-const NavLink = styled.a`
-    font-size: 100%;
-    font-family: 'Inconsolata', monospace;
-    font-weight: 400;
-    color: #ffffff;
-
-    :hover {
-        cursor: pointer;
-        color: #584cea;
-    }
-    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { font-size: 90%; } 
-    @media only screen and (min-width: 1025px) and (max-width: 1366.99px) { font-size: 95%; }
+    gap: 6rem;
+    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { gap: 4rem; }
 `;
 
 const Navigation = () => {

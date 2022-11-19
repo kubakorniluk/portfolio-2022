@@ -1,19 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import responsiveTextMixin from '../helpers/mixins/responsiveTextMixin.js';
 
-const StyledButton = styled.button`
+const checkColor =  ({ primary, theme: { colors } }) => primary ? colors.white : colors.dark200;
+
+const StyledButton = styled.button.attrs(
+        ({ type }) => ({
+            type: type
+        })
+    )`
+
+    // font size/family/weight
+    ${ responsiveTextMixin }
+
+    font-size: 100%;
     position: relative;
     display: block;
     /* if primary attribute is active, change button color */
-    background-color: ${props => props.primary ? 'rgba(255, 255, 255, 0.15)' : 'rgb(238, 238, 238)'};
+    background-color: ${ ({ primary, theme: { colors } }) => primary ? 'rgba(255, 255, 255, 0.2)' : colors.grey100 };
     border: 0;
-    color: ${props => props.primary ? '#ffffff' : '#121212'};
-    font-family: 'Inconsolata', monospace;
+    color: ${ checkColor };
     font-weight: 400;
-    font-size: 100%;
     margin: 0;
     padding: 1em 1.5em;
+    cursor: pointer;
     transition: .1s;
     span {
         position: absolute;
@@ -23,33 +34,32 @@ const StyledButton = styled.button`
         transition: .1s;
     }
     .top-left {
-        border-top: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
-        border-left: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
+        border-top: .075em solid ${ checkColor }; 
+        border-left: .075em solid ${ checkColor };
         top: 0;
         left: 0;
     }
     .top-right {
-        border-top: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
-        border-right: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
+        border-top: .075em solid ${ checkColor };
+        border-right: .075em solid ${ checkColor };
         top: 0;
         right: 0;
     }
     .bottom-left {
-        border-bottom: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
-        border-left: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
+        border-bottom: .075em solid ${ checkColor };
+        border-left: .075em solid ${ checkColor };
         bottom: 0;
         left: 0;
     }
     .bottom-right {
-        border-bottom: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
-        border-right: .075em solid ${props => props.primary ? '#ffffff' : '#121212'};
+        border-bottom: .075em solid ${ checkColor };
+        border-right: .075em solid ${ checkColor };
         bottom: 0;
         right: 0;
     }
     &:hover {
-        cursor: pointer;
-        background-color: ${props => props.primary ? '#ffffff' : '#121212'};
-        color: ${props => props.primary ? '#121212' : '#ffffff'};
+        background-color: ${ checkColor };
+        color: ${ ({ primary, theme: { colors } }) => primary ? colors.dark : colors.white };
         .top-left {
             top: -.5em;
             left: -.5em;
@@ -67,23 +77,16 @@ const StyledButton = styled.button`
             right: -.5em;
         }
     }
-    @media only screen and (min-width: 0px) and (max-width: 320.99px) { font-size: 90%; }
-    @media only screen and (min-width: 321px) and (max-width: 576.99px) { font-size: 95%; }
-    @media only screen and (min-width: 577px) and (max-width: 768.99px) { font-size: 90%; }
-    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { font-size: 90%; } 
-    @media only screen and (min-width: 1025px) and (max-width: 1366.99px) { font-size: 95%; }
 `;
 
 const Button = ({ 
     children,
-    type,
     onClick,
     ...props
 }) => {
     return (
         <StyledButton 
-            type={type} 
-            onClick={onClick}
+            onClick={ onClick }
             { ...props }
         >
             <span className="top-left"></span>
@@ -96,6 +99,10 @@ const Button = ({
 }
  
 export default Button;
+
+Button.defaultProps = {
+    type: 'button'
+}
 
 Button.propTypes = {
     children: PropTypes.any.isRequired,

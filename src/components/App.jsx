@@ -1,6 +1,7 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import ProjectContextProvider from './ProjectContextProvider';
+import Theme from '../Theme';
 import Header from './Header';
 import Navbar from './Navbar';
 import Welcome from './Welcome';
@@ -9,6 +10,30 @@ import Bio from './Bio';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
 import Footer from './Footer';
+
+const App = () => {
+    return (
+        <>
+            <GlobalStyles />
+            <ThemeProvider theme={ Theme }>
+                <Header>
+                    <Navbar />
+                    <Welcome />
+                </Header>
+                <Main>
+                    <Bio />
+                    <ProjectContextProvider>
+                        <Portfolio />
+                    </ProjectContextProvider>
+                    <Contact />
+                </Main>
+                <Footer />
+            </ThemeProvider>
+        </>
+    );
+}
+
+export default App;
 
 const GlobalStyles = createGlobalStyle`
     *, *:before, *:after { box-sizing: border-box; }
@@ -25,26 +50,5 @@ const GlobalStyles = createGlobalStyle`
         flex-direction: column;
     }
     a { text-decoration: none; }
+    *:focus { outline: 0; }
 `;
-
-const App = () => {
-    return (
-        <>
-            <GlobalStyles />
-            <Header>
-                <Navbar />
-                <Welcome />
-            </Header>
-            <Main>
-                <Bio />
-                <ProjectContextProvider>
-                    <Portfolio />
-                </ProjectContextProvider>
-                <Contact />
-            </Main>
-            <Footer />
-        </>
-    );
-}
-
-export default App;

@@ -8,10 +8,8 @@ const StyledDetails = styled.div`
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1.75em;
+    gap: 1.75rem;
     width: 100%;
-    @media only screen and (min-width: 0px) and (max-width: 320.99px) { width: 100%; }
-    @media only screen and (min-width: 321px) and (max-width: 576.99px) { width: 100%; }
 `;
 
 const Details = () => {
