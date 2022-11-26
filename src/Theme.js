@@ -9,7 +9,7 @@ const Theme = {
         white: '#FFFFFF'
     },
     fonts: {
-        base: '\'Inconsolata\', monospace',
+        base: '\'Inconsolata\', sans-serif',
         logo: '\'Quicksand\', sans-serif'
     },
     textBreakpoints: {
@@ -17,8 +17,8 @@ const Theme = {
         phoneM: '1.05rem',
         tabletS: '1rem',
         tabletM: '1.05rem',
-        desktopS: '1rem',
-        desktopM: '1.05rem' 
+        desktopS: '0.9rem',
+        desktopM: '1.025rem' 
     },
     headingBreakpoints: {
         phoneS: '1.25rem',

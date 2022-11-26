@@ -15,7 +15,7 @@ const Link = styled.a.attrs(
     width: auto;
     text-decoration: underline;
     color: ${ ({ color, theme: { colors } }) => color || colors.dark };
-    &:hover {
+    :hover {
         color: ${ ({ theme: { colors } }) => colors.violet };
     }
 `;

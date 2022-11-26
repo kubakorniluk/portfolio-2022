@@ -79,16 +79,16 @@ const Project = ({
             <ProjectInfo>
                 <InfoWrapper>
                     <Title>{ title }</Title>
-                    <Icon href={ sourceCode }color="#121212">
+                    <Icon href={ sourceCode } color="#121212">
                         <FontAwesomeIcon icon={ faGithubSquare } />
                     </Icon>
                 </InfoWrapper>
-                <ItemGroup style={{gap: '.5rem'}}>
+                <ItemGroup style={{gap: '.75rem'}}>
                     <Badge>{ date }</Badge>
                     { stack.map(item => <Badge key={ `badge${item}` } color="violet">{ item }</Badge>) }
                 </ItemGroup>
                 <Text>{ description }</Text>
-                <LinkButton href={ website }>Zobacz projekt</LinkButton>
+                <Link href={ website }>Zobacz projekt</Link>
             </ProjectInfo>
         </StyledProject>
     );

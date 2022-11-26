@@ -44,6 +44,7 @@ const GlobalStyles = createGlobalStyle`
         background-color: #ffffff;
         width: 100%;
         height: auto;
+        letter-spacing: .05rem;
     }
     #root {
         display: flex;

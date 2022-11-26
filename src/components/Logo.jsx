@@ -10,6 +10,7 @@ const Logo = styled.a.attrs({
     margin: 0;
     color: ${ ({ theme: { colors } }) => colors.white };
     font-family: ${ ({ theme: { fonts } }) => fonts.logo };
+    font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
     // additional styling for mobile devices

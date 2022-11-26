@@ -12,7 +12,7 @@ const Icon = styled.a.attrs(
     color: ${ ({ color, theme: { colors } }) => color || colors.white };
     text-decoration: none;
     cursor: pointer;
-    &:hover { 
+    :hover { 
         color: ${ ({ theme: { colors } }) => colors.violet }; 
     }
     @media only screen and (min-width: 0px) and (max-width: 320.99px) { font-size: 150%; }

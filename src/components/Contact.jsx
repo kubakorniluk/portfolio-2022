@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Section from './reusable/Section';
 import Details from './Details';
+import Form from './Form/Form';
 
 const StyledContact = styled(Section).attrs(
     ({ role }) => ({
@@ -10,7 +11,7 @@ const StyledContact = styled(Section).attrs(
 )`
     flex-direction: row;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3.5em;
     padding-top: 6rem;
     padding-bottom: 6rem;
     background-color: ${ ({ theme: { colors } }) => colors.dark };
@@ -27,7 +28,8 @@ const StyledContact = styled(Section).attrs(
 const Contact = () => {
     return (
         <StyledContact role="contact">
-            <Details />
+            {/* <Details /> */}
+            <Form />
         </StyledContact>
     );
 }

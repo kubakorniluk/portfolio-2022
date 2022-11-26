@@ -18,63 +18,63 @@ const StyledButton = styled.button.attrs(
     position: relative;
     display: block;
     /* if primary attribute is active, change button color */
-    background-color: ${ ({ primary, theme: { colors } }) => primary ? 'rgba(255, 255, 255, 0.2)' : colors.grey100 };
+    background-color: ${ ({ primary, theme: { colors } }) => primary ? 'rgba(255, 255, 255, 0.05)' : colors.grey100 };
     border: 0;
     color: ${ checkColor };
     font-weight: 400;
     margin: 0;
-    padding: 1em 1.5em;
+    padding: 1rem 2rem;
     cursor: pointer;
     transition: .1s;
     span {
         position: absolute;
         display: block;
-        width: .5em;
-        height: .5em;
+        width: .5rem;
+        height: .5rem;
         transition: .1s;
     }
     .top-left {
-        border-top: .075em solid ${ checkColor }; 
-        border-left: .075em solid ${ checkColor };
+        border-top: .075rem solid ${ checkColor }; 
+        border-left: .075rem solid ${ checkColor };
         top: 0;
         left: 0;
     }
     .top-right {
-        border-top: .075em solid ${ checkColor };
-        border-right: .075em solid ${ checkColor };
+        border-top: .075rem solid ${ checkColor };
+        border-right: .075rem solid ${ checkColor };
         top: 0;
         right: 0;
     }
     .bottom-left {
-        border-bottom: .075em solid ${ checkColor };
-        border-left: .075em solid ${ checkColor };
+        border-bottom: .075rem solid ${ checkColor };
+        border-left: .075rem solid ${ checkColor };
         bottom: 0;
         left: 0;
     }
     .bottom-right {
-        border-bottom: .075em solid ${ checkColor };
-        border-right: .075em solid ${ checkColor };
+        border-bottom: .075rem solid ${ checkColor };
+        border-right: .075rem solid ${ checkColor };
         bottom: 0;
         right: 0;
     }
-    &:hover {
+    :hover {
         background-color: ${ checkColor };
         color: ${ ({ primary, theme: { colors } }) => primary ? colors.dark : colors.white };
         .top-left {
-            top: -.5em;
-            left: -.5em;
+            top: -.5rem;
+            left: -.5rem;
         }
         .top-right {
-            top: -.5em;
-            right: -.5em;
+            top: -.5rem;
+            right: -.5rem;
         }
         .bottom-left {
-            bottom: -.5em;
-            left: -.5em;
+            bottom: -.5rem;
+            left: -.5rem;
         }
         .bottom-right {
-            bottom: -.5em;
-            right: -.5em;
+            bottom: -.5rem;
+            right: -.5rem;
         }
     }
 `;

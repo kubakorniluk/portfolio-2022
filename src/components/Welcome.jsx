@@ -18,7 +18,7 @@ const StyledWelcome = styled(BioContent)`
 
 const BiggerHeading = styled(SectionHeading)`
     font-size: 245%;
-    font-weight: 900;
+    font-weight: 700;
     @media only screen and (min-width: 0px) and (max-width: 320.99px) { font-size: 185%; }
     @media only screen and (min-width: 321px) and (max-width: 576.99px) { font-size: 225%; }
     @media only screen and (min-width: 577px) and (max-width: 768.99px) { font-size: 225%; }
