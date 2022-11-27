@@ -14,6 +14,14 @@ const StyledBio = styled(Section).attrs(
     padding-top: 8rem;
     padding-bottom: 8rem;
     text-align: center;
+    @media only screen and (min-width: 0px) and (max-width: 320.99px) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    @media only screen and (min-width: 321px) and (max-width: 576.99px) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
 `;
 
 export const BioContent = styled.div`
