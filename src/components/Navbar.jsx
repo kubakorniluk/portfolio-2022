@@ -5,15 +5,14 @@ import Navigation from './Navigation';
 import SocialNavigation from './SocialNavigation';
 
 const StyledNavbar = styled.nav`
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        /* backdrop-filter: blur(5px); */
-    `;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;    
+`;
 
 const Navbar = () => {
 
@@ -49,13 +48,14 @@ const Navbar = () => {
     //     top: '0',
     //     left: '0',
     //     padding: 'inherit',
-    //     paddingTop: '1em',
-    //     paddingBottom: '1em',
-    //     backgroundColor: 'rgba(18, 18, 18, .5)'
+    //     paddingTop: '1.5rem',
+    //     paddingBottom: '1.5rem',
+    //     backgroundColor: 'rgba(18, 18, 18, .4)',
+    //     backdropFilter: 'blur(2.5px)'
     // }
     return (
         <StyledNavbar>
-            <Logo />
+            <Logo>Kuba Korniluk</Logo>
             { (screenWidth > 768) ? 
             <>
                 <Navigation />

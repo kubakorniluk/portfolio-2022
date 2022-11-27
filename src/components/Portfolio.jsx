@@ -6,20 +6,33 @@ import SectionHeading from './reusable/SectionHeading';
 import Text from './reusable/Text'
 import Project from './Project';
 
-const StyledPortfolio = styled.div`
+const StyledPortfolio = styled(Section).attrs(
+    ({ role }) => ({
+        id: role
+    })
+)`
+    background-color: ${ ({ theme: { colors } }) => colors.grey100 };
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+`;
+
+const Content = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 1.75em;
+    gap: 1.75rem;
     width: 100%;
-    overflow-x: scroll;
-    ::-webkit-scrollbar { height: .25em; }
+    overflow-x: auto;
+    padding: 4rem 0;
+
+    // scrollbar styling
+    ::-webkit-scrollbar { height: .25rem; }
     ::-webkit-scrollbar-track {
-        border-radius: 10px;
-        box-shadow: inset 0 0 5px #969696;
+        border-radius: .5rem;
+        box-shadow: inset 0 0 5px ${ ({ theme: { colors } }) => colors.grey300 };
     }
     ::-webkit-scrollbar-thumb {
-        border-radius:10px;
-        background-color: #584cea;
+        border-radius: .5rem;
+        background-color: ${ ({ theme: { colors } }) => colors.violet };
     }    
     ::-webkit-scrollbar-thumb:hover { background-color: rgba(88, 76, 234, .75); }
 `;
@@ -35,24 +48,16 @@ const Portfolio = () => {
 
     const { projectsData } = useContext(ProjectContext)
 
-    const portfolioStyling = {
-        backgroundColor: '#EEEEEE',
-        gap: '2.5em',
-        // previuos padding + additional 5em
-        paddingTop: '5em',
-        paddingBottom: '5em'
-    }
-
     return (
-        <Section role="portfolio" style={ portfolioStyling }>
+        <StyledPortfolio role="portfolio">
             <Heading>
                 <SectionHeading>Portfolio</SectionHeading>
-                <Text style={{color: '#969696'}}>Zbiór najbardziej wartych uwagi prac.</Text>
+                <Text>Zbiór najbardziej wartych uwagi prac.</Text>
             </Heading>
-            <StyledPortfolio>
-                { projectsData.map(data => <Project key={data.id} data={data} />) }
-            </StyledPortfolio>
-        </Section>
+            <Content>
+                { projectsData.map(data => <Project key={ data.id } data={ data } />) }
+            </Content>
+        </StyledPortfolio>
     );
 }
  

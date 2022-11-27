@@ -1,24 +1,25 @@
-import React from 'react';
 import styled from 'styled-components';
+import responsiveTextMixin from './helpers/mixins/responsiveTextMixin';
 
-const StyledLogo = styled.a`
+const Logo = styled.a.attrs({
+    href: 'https://kubakorniluk.pl/'
+})`
+    // font sizing
+    ${ responsiveTextMixin }
+
     margin: 0;
-    color: #ffffff;
-    font-family: 'Quicksand', sans-serif;
+    color: ${ ({ theme: { colors } }) => colors.white };
+    font-family: ${ ({ theme: { fonts } }) => fonts.logo };
+    font-size: 1.1rem;
     font-weight: 700;
-    font-size: 110%;
     cursor: pointer;
-    @media only screen and (min-width: 0px) and (max-width: 320.99px) { font-size: 105%; }
-    @media only screen and (min-width: 321px) and (max-width: 576.99px) { font-size: 125%; }
-    @media only screen and (min-width: 577px) and (max-width: 768.99px) { font-size: 100%; }
-    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { font-size: 95%; } 
-    @media only screen and (min-width: 1025px) and (max-width: 1366.99px) { font-size: 100%; }
+    // additional styling for mobile devices
+    @media only screen and (min-width: 0px) and (max-width: 320.99px) { 
+        font-size: 1.15rem; 
+    }
+    @media only screen and (min-width: 321px) and (max-width: 576.99px) { 
+        font-size: 1.25rem; 
+    }
 `;
 
-const Logo = () => {
-    return (
-        <StyledLogo href="https://kubakorniluk.pl/">Kuba Korniluk</StyledLogo>
-    );
-}
- 
 export default Logo;

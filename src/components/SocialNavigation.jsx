@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubSquare} from '@fortawesome/free-brands-svg-icons/faGithubSquare.js';
 import { faLinkedin} from '@fortawesome/free-brands-svg-icons/faLinkedin.js';
@@ -37,3 +38,7 @@ const SocialNavigation = ({ color }) => {
 }
  
 export default SocialNavigation;
+
+SocialNavigation.propTypes = {
+    color: PropTypes.string
+}
