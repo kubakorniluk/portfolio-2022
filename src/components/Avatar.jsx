@@ -4,8 +4,8 @@ const Avatar = styled.img`
     position: absolute;
     bottom: 0;
     right: 50%;
-    transform: translate(50%, 0%);
-    height: 85vh;
+    transform: translateX(50%);
+    height: 82.5vh;
     width: auto;
     z-index: 0;
     @media only screen and (min-width: 0px) and (max-width: 320.99px) {

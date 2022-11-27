@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Section from './reusable/Section';
-import Details from './Details';
+// import Details from './Details';
 import Form from './Form/Form';
 
 const StyledContact = styled(Section).attrs(

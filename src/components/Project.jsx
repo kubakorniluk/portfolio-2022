@@ -8,7 +8,6 @@ import ItemGroup from './reusable/ItemGroup';
 import Badge from './reusable/Badge';
 import Text from './reusable/Text';
 import Link from './reusable/Link';
-import LinkButton from './reusable/LinkButton';
 import responsiveTextMixin from './helpers/mixins/responsiveTextMixin';
 
 const StyledProject = styled.figure`
@@ -57,13 +56,12 @@ const Title = styled.h2`
         font-size: 1.1rem; 
     }
     @media only screen and (min-width: 321px) and (max-width: 576.99px) { 
-        font-size: 1.2rem; 
+        font-size: 1.15rem; 
     }
 `;
 
 const Project = ({ 
     data: { 
-        id,
         img, 
         title, 
         description, 
@@ -88,8 +86,8 @@ const Project = ({
                     { stack.map(item => <Badge key={ `badge${item}` } color="violet">{ item }</Badge>) }
                 </ItemGroup>
                 <Text>{ description }</Text>
-                <Link href={ website }>Zobacz projekt</Link>
             </ProjectInfo>
+            <Link href={ website } style={{marginTop: '2rem'}}>Zobacz projekt</Link>
         </StyledProject>
     );
 }

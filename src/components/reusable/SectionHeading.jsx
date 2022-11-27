@@ -6,7 +6,7 @@ const SectionHeading = styled.h1`
     // font size/weight/family
     ${ responsiveHeadingMixin }
 
-    color: ${ ({ color, theme: { colors } }) => color || colors.dark };
+    color: ${ ({ color, theme: { colors } }) => color || colors.dark100 };
     margin: 0;
 `;
  

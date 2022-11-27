@@ -18,12 +18,12 @@ const StyledButton = styled.button.attrs(
     position: relative;
     display: block;
     /* if primary attribute is active, change button color */
-    background-color: ${ ({ primary, theme: { colors } }) => primary ? 'rgba(255, 255, 255, 0.05)' : colors.grey100 };
+    background-color: ${ ({ primary, theme: { colors } }) => primary ? 'rgba(255, 255, 255, 0.1)' : colors.grey100 };
     border: 0;
     color: ${ checkColor };
     font-weight: 400;
     margin: 0;
-    padding: 1rem 2rem;
+    padding: .9rem 2rem;
     cursor: pointer;
     transition: .1s;
     span {

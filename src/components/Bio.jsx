@@ -11,8 +11,8 @@ const StyledBio = styled(Section).attrs(
     })
 )`
     align-items: center;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
     text-align: center;
 `;
 
