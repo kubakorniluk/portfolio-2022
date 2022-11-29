@@ -9,10 +9,10 @@ const inputStylingMixin = css`
     padding: 1rem;
     color: ${ ({ theme: { colors } }) => colors.violet };
     border: none;
-    background-color: rgba(255, 255, 255, .02);
+    background-color: rgba(255, 255, 255, .05);
     width: 100%;
     :focus {
-        background-color: rgba(255, 255, 255, .05);
+        background-color: rgba(255, 255, 255, .1);
     }
 `;
 

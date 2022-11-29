@@ -3,7 +3,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import ProjectContextProvider from './ProjectContextProvider';
 import Theme from '../Theme';
 import Header from './Header';
-import Navbar from './Navbar';
+import Navbar from './Navbar/Navbar';
 import Welcome from './Welcome';
 import Main from './Main';
 import Bio from './Bio';
@@ -16,18 +16,18 @@ const App = () => {
         <>
             <GlobalStyles />
             <ThemeProvider theme={ Theme }>
-                <Header>
-                    <Navbar />
-                    <Welcome />
-                </Header>
-                <Main>
-                    <Bio />
-                    <ProjectContextProvider>
+                <ProjectContextProvider>
+                    <Header>
+                        <Navbar />
+                        <Welcome />
+                    </Header>
+                    <Main>
+                        <Bio />
                         <Portfolio />
-                    </ProjectContextProvider>
-                    <Contact />
-                </Main>
-                <Footer />
+                        <Contact />
+                    </Main>
+                    <Footer />
+                </ProjectContextProvider>
             </ThemeProvider>
         </>
     );

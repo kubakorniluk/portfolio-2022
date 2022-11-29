@@ -23,7 +23,7 @@ const StyledButton = styled.button.attrs(
     color: ${ checkColor };
     font-weight: 400;
     margin: 0;
-    padding: .9rem 2rem;
+    padding: .85rem 2rem;
     cursor: pointer;
     transition: .1s;
     span {
