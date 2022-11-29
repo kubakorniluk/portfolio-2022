@@ -20,9 +20,9 @@ const Details = () => {
             <Text color="#ffffff">
                 Wyznaję <b>zadaniowe podejście</b> do rozwiązywania problemów, co przekłada się na szybkie opracowanie <b>skutecznego planu działania</b>. 
                 Mój design zawsze idzie w parze z tożsamością marki klienta. 
-                Pracuję z użyciem <b>najnowszych technologii</b>. 
-                <br/><br/>Lubię wyzwania. 
+                Pracuję z użyciem <b>najnowszych technologii</b>.
             </Text>
+            <Text color="#ffffff">Lubię wyzwania.</Text>
         </StyledDetails>
     );
 }

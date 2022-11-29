@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SocialNavigation from './SocialNavigation';
+import SocialNavigation from './reusable/SocialNavigation';
 import Copyright from './Copyright';
 import sectionPaddingMixin from './helpers/mixins/sectionPaddingMixin';
 

@@ -18,7 +18,9 @@ const StyledForm = styled.form`
     flex-direction: column;
     align-items: start;
     gap: 2rem;
-    width: 100%;
+    width: 50%;
+    @media only screen and (min-width: 0px) and (max-width: 320.99px) { width: 100%; }
+    @media only screen and (min-width: 321px) and (max-width: 576.99px) { width: 100%; }
 `;
 
 const InputGroup = styled(ItemGroup)`

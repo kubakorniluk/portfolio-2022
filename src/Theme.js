@@ -6,7 +6,7 @@ const Theme = {
         grey100: '#F5F5FA',
         grey200: '#F0F0FA',
         grey300: '#9696a5',
-        white: '#FFFFFF'
+        white: '#F0F0F0'
     },
     fonts: {
         base: '\'Sarabun\', sans-serif',
@@ -16,9 +16,9 @@ const Theme = {
         phoneS: '.9rem',
         phoneM: '1rem',
         tabletS: '1rem',
-        tabletM: '1.05rem',
+        tabletM: '1rem',
         desktopS: '.9rem',
-        desktopM: '1.05rem' 
+        desktopM: '1.025rem' 
     },
     headingBreakpoints: {
         phoneS: '1.3rem',

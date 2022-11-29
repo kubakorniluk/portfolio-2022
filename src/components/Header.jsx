@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { ProjectContext } from './ProjectContextProvider';
 import Avatar from './Avatar';
 import sectionPaddingMixin from './helpers/mixins/sectionPaddingMixin';
 import avatar from '../assets/img/avatar.png'
@@ -34,9 +35,13 @@ const Overlay = styled.div`
 `;
 
 const Header = ({ children }) => {
+    const { screenSize } = useContext(ProjectContext);
+
     return ( 
         <StyledHeader>
-            <Avatar src={ avatar } />
+            { 
+                (screenSize > 768) ? <Avatar src={ avatar } /> : null
+            }
             <Overlay>
                 { children }
             </Overlay>

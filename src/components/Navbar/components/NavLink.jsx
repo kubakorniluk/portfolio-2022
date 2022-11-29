@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import responsiveTextMixin from './helpers/mixins/responsiveTextMixin';
+import responsiveTextMixin from '../../helpers/mixins/responsiveTextMixin';
 
 const NavLink = styled.a`
     // font size/family/weight

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { scrollDown } from './helpers/scrollDown';
+import { scrollDown } from '../../helpers/scrollDown';
 import NavLink from './NavLink';
 
 const StyledNavigation = styled.div`

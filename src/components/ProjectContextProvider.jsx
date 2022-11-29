@@ -21,8 +21,22 @@ const ProjectContextProvider = ({
 
     const memoizedData = useMemo(() => projectsData, [projectsData]);
 
+    
+
+    const [ screenWidth, setScreenWidth ] = useState(window.innerWidth);
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    });
+
+    const handleResize = () => setScreenWidth(window.innerWidth);
+
     const value = {
-        projectsData: memoizedData
+        projectsData: memoizedData,
+        screenSize: screenWidth
     };
 
     return (

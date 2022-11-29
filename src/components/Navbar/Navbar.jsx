@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import Logo from './Logo';
-import Navigation from './Navigation';
-import SocialNavigation from './SocialNavigation';
+import { ProjectContext } from '../ProjectContextProvider';
+import Logo from './components/Logo';
+import Navigation from './components/Navigation';
+import SocialNavigation from '../reusable/SocialNavigation';
 
 const StyledNavbar = styled.nav`
     position: relative;
@@ -15,17 +16,9 @@ const StyledNavbar = styled.nav`
 `;
 
 const Navbar = () => {
-
-    const [ screenWidth, setScreenWidth ] = useState(window.innerWidth);
+    const { screenSize } = useContext(ProjectContext);
 
     // const [ navStyle, setNavStyle ] = useState({});
-
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    });
 
     // useEffect(() => {
     //     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -35,8 +28,6 @@ const Navbar = () => {
     // });
 
     // const handleScroll = () => window.scrollY > 0 ? setNavStyle(stickyNav) : setNavStyle(normalNav)
-    
-    const handleResize = () => setScreenWidth(window.innerWidth);
 
     // const normalNav = {
     //     position: 'relative',
@@ -56,7 +47,7 @@ const Navbar = () => {
     return (
         <StyledNavbar>
             <Logo>Kuba Korniluk</Logo>
-            { (screenWidth > 768) ? 
+            { (screenSize > 768) ? 
             <>
                 <Navigation />
                 <SocialNavigation /> 

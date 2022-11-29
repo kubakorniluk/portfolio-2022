@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Section from './reusable/Section';
 import SectionHeading from './reusable/SectionHeading';
 import Text from './reusable/Text';
-import SocialNavigation from './SocialNavigation';
+import SocialNavigation from './reusable/SocialNavigation';
 
 const StyledBio = styled(Section).attrs(
     ({ role }) => ({
