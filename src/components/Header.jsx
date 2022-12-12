@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
     background-color: ${ ({ theme: { colors } }) => colors.dark };
     overflow: hidden;
     @media only screen and (min-width: 577px) and (max-width: 768.99px) { height: 75vh; }
-    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { height: 75vh; } 
+    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { height: 87.5vh; } 
     
 `;
 
@@ -31,7 +31,7 @@ const Overlay = styled.div`
     height: 95vh;
     width: 100%;
     @media only screen and (min-width: 577px) and (max-width: 768.99px) { height: 75vh; }
-    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { height: 75vh; } 
+    @media only screen and (min-width: 769px) and (max-width: 1024.99px) { height: 87.5vh; } 
 `;
 
 const Header = ({ children }) => {

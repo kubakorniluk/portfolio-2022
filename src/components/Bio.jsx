@@ -44,9 +44,9 @@ const Bio = () => {
             <BioContent>
                 <SectionHeading>Biogram</SectionHeading>
                 <Text>
-                    <b>Junior Front-End Developer</b>, artysta kombinator, człowiek renesansu. 
-                    Specjalizuję się w tworzeniu unikatowych, dopracowanych w każdym calu <b>landing page’ów</b>. 
-                    Aktualnie szukam stałej pracy na wyżej wymienionym stanowisku, jestem również dostępny jako <b>wolny strzelec</b>.
+                    <b>Front-End Developer</b>, artysta kombinator, człowiek renesansu. 
+                    Specjalizuję się w tworzeniu unikatowych, dopracowanych w każdym calu <b>landing page’ów</b>.
+                    Aktualnie tworzę niesamowite rzeczy w <b>IntuiVision</b>.
                 </Text>
                 <SocialNavigation color="#121212" />
             </BioContent>   

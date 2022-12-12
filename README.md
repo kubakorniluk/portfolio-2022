@@ -1,5 +1,6 @@
 # portfolio
-My own stronghold. The site is currently undergoing a major reconstruction. 
+My own stronghold.
+
 You can visit my website here [https://kubakorniluk.pl/](https://kubakorniluk.pl/).
 
 ## Technologies used
